@@ -42,7 +42,7 @@ function LargeCard({ children }) {
 function SmallCard({ children, reward, className }) {
   return (
     <div className={className}>
-      <div className="gap-5 justify-center items-center content-center border border-purple-500 rounded-md md:py-2 py-3 px-2 flex flex-col items-center text-center w-full h-full">
+      <div className="gap-5 justify-center items-center content-center border border-purple-500 rounded-md md:py-2 py-3 px-2 flex flex-col text-center w-full h-full">
         <h1 className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999] text-lg md:text-xl">
           {children}
         </h1>
@@ -57,7 +57,7 @@ function SmallCard({ children, reward, className }) {
 function MediumCard({ children, reward, className }) {
   return (
     <div className={className}>
-      <div className="gap-5 justify-center items-center content-center border border-purple-500 rounded-md md:py-2 p-3 flex flex-col items-center text-center w-full h-full">
+      <div className="gap-5 justify-center items-center content-center border border-purple-500 rounded-md md:py-2 p-3 flex flex-col text-center w-full h-full">
         <img src={gaintnut} alt="nut" />
         <h1 className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999] text-lg md:text-xl">
           {children}
