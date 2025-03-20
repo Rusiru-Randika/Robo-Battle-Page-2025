@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
-import logo from "../../assets/Logo.svg"; // Adjust the path to your logo
+import logo from "/src/assets/logo.svg"; // Adjust the path to your logo
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -189,9 +189,8 @@ const NavLink = ({ to, children, activeLink, onClick }) => {
     <Link
       to={to}
       onClick={handleClick}
-      className={`w-full px-4 py-2 text-xl font-medium text-white rounded-full hover:text-[#23C4FF] ${
-        activeLink === to ? "text-[#23C4FF]" : ""
-      }`}
+      className={`w-full px-4 py-2 text-xl font-medium text-white rounded-full hover:text-[#23C4FF] ${activeLink === to ? "text-[#23C4FF]" : ""
+        }`}
     >
       {children}
     </Link>

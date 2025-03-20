@@ -1,5 +1,5 @@
 import React from "react";
-import kasunsir from "../../assets/Kasun Sir.jpg";
+// import kasunsir from "@/componenst/assets/Kasun Sir.jpg";
 
 const teamMembers = [
   {
