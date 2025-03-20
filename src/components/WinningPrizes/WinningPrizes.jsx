@@ -1,5 +1,6 @@
 import React from "react";
 import { GiTrophyCup } from "react-icons/gi";
+import gaintnut from "../../assets/GaintNut.svg";
 
 const WinningPrizes = () => {
   return (
@@ -10,9 +11,9 @@ const WinningPrizes = () => {
         </h1>
       </div>
 
-      <div className="flex flex-col justify-center items-center gap-8 mt-10 md:flex-row md:items-center md:justify-between lg:justify-between md:content-center ">
-        <LargeCard>Light-weight</LargeCard>
-        <LargeCard>Heavy-weight</LargeCard>
+      <div className="font-transrobotics flex flex-col justify-center items-center gap-2 md:gap-8 mt-10 md:flex-row md:items-center md:justify-center lg:justify-center md:content-center">
+        <LargeCard>Light Weight Category</LargeCard>
+        <LargeCard>Heavy Weight Category</LargeCard>
       </div>
     </div>
   );
@@ -20,17 +21,20 @@ const WinningPrizes = () => {
 
 function LargeCard({ children }) {
   return (
-    <div className="grid gap-5 mt-4 justify-center items-center content-center border border-purple-500 rounded-md md:py-2 p-3">
-      <h1>{children}</h1>
-      <MediumCard className="col-span-2 row-span-1" reward="30,000">
+    <div className="grid gap-5 mt-4 justify-center items-center content-center border border-purple-500 rounded-md md:py-2 p-3 w-full max-w-md">
+      <h1 className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999] text-2xl md:text-3xl text-center">
+        {children}
+      </h1>
+      <MediumCard
+        className="col-span-2 row-span-1"
+        reward="LKR 30,000 + GIANT NUT"
+      >
         WINNER
       </MediumCard>
-      <SmallCard className="col-span-1 row-span-1" reward="20,000">
-        1ST RUNNERS UP
-      </SmallCard>
-      <SmallCard className="col-span-1 row-span-1" reward="20,000">
-        2ND RUNNERS UP
-      </SmallCard>
+      <div className="grid grid-cols-2 gap-5 w-full">
+        <SmallCard reward="LKR 20,000">1ST RUNNER UP</SmallCard>
+        <SmallCard reward="LKR 20,000">2ND RUNNER UP</SmallCard>
+      </div>
     </div>
   );
 }
@@ -38,21 +42,29 @@ function LargeCard({ children }) {
 function SmallCard({ children, reward, className }) {
   return (
     <div className={className}>
-      <div className="gap-5 mt-4 justify-center items-center content-center border border-purple-500 rounded-md md:py-2 py-3 px-2">
-        <img src="/nut.png" alt="nut" />
-        <h1>{children}</h1>
-        <div>{reward}</div>
+      <div className="gap-5 justify-center items-center content-center border border-purple-500 rounded-md md:py-2 py-3 px-2 flex flex-col items-center text-center w-full h-full">
+        <h1 className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999] text-lg md:text-xl">
+          {children}
+        </h1>
+        <div className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999] text-lg md:text-xl">
+          {reward}
+        </div>
       </div>
     </div>
   );
 }
+
 function MediumCard({ children, reward, className }) {
   return (
     <div className={className}>
-      <div className=" gap-5 mt-4 justify-center items-center content-center border border-purple-500 rounded-md md:py-2 p-3">
-        <img src="@\public\nut.png" alt="nut" />
-        <h1>{children}</h1>
-        <div>{reward}</div>
+      <div className="gap-5 justify-center items-center content-center border border-purple-500 rounded-md md:py-2 p-3 flex flex-col items-center text-center w-full h-full">
+        <img src={gaintnut} alt="nut" />
+        <h1 className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999] text-lg md:text-xl">
+          {children}
+        </h1>
+        <div className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999] text-lg md:text-xl">
+          {reward}
+        </div>
       </div>
     </div>
   );

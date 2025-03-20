@@ -1,7 +1,5 @@
 import React from "react";
-import chamith from "../../assets/chamith.jpg";
-import kasunsir from "../../assets/kasun sir.jpg";
-import himal from "../../assets/himal.jpg";
+import kasunsir from "../../assets/Kasun Sir.jpg";
 
 const teamMembers = [
   {
@@ -9,7 +7,6 @@ const teamMembers = [
     name: "L H G Gunawardhana",
     phone: "+94 76 786 3340",
     email: "himalgeethanjana18@gmail.com",
-    photo: himal, // Dummy photo
   },
   {
     role: "Senior Treasurer",
@@ -25,8 +22,7 @@ const teamMembers = [
     name: "Chamith Dilshan",
     phone: "+94 78 256 3766",
     email: "dilshankmc@gmail.com",
-    photo: chamith,
-  },
+  },
 ];
 
 const TeamCard = ({ member, className, index }) => (
@@ -40,7 +36,9 @@ const TeamCard = ({ member, className, index }) => (
     />
     <h3 className="mb-2 text-3xl font-bold ">{member.role}</h3>
     <p className="mb-2 ">{member.name}</p>
-    {member.description && <p className="mb-2 text-sm opacity-90">{member.description}</p>}
+    {member.description && (
+      <p className="mb-2 text-sm opacity-90">{member.description}</p>
+    )}
     <div className="text-sm">
       {index !== 1 && <p className="mb-1 opacity-60">📞 {member.phone}</p>}
       <p className="opacity-60">📧 {member.email}</p>
@@ -52,7 +50,6 @@ const Team = () => (
   <div className=" md:mb-20 md:mt-[-50px] mb-10 -mt-10">
     <h2 className="relative pt-20 pb-2 mt-5 mb-6 text-3xl font-bold text-center text-white md:text-4xl font-krona md:mt-20">
       CONTACT US
-      
     </h2>
     <div className="flex flex-col gap-6 p-6 md:flex-row md:justify-center ">
       {teamMembers.map((member, index) => (
