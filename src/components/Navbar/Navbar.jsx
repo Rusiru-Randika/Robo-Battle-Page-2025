@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
-import logo from "/src/assets/logo.svg"; // Adjust the path to your logo
+import logo from "../../../public/Branding/logo.svg"; // Adjust the path to your logo
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

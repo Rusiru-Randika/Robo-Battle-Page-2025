@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Button/Button";
-import homeLogo from "../../assets/Home-Logo.svg"; // Ensure the path is correct
+import homeLogo from "../../../public/Branding/Home-Logo.svg"; // Ensure the path is correct
 
 const Home = () => {
   return (

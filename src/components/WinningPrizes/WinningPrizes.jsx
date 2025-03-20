@@ -1,6 +1,6 @@
 import React from "react";
 import { GiTrophyCup } from "react-icons/gi";
-import gaintnut from "../../assets/GaintNut.svg";
+import gaintnut from "../../../public/PrizesImages/GaintNut.svg";
 
 const WinningPrizes = () => {
   return (
