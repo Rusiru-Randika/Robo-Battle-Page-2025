@@ -1,16 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Countdown from "./components/countdown";
-import Timeline from "./components/Timeline/Timeline";
+import ShinyEffect from "./components/ShinyEffect/ShinyEffect";
+
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
+import Countdown from "./components/countdown";
 import Registration from "./components/Registration/Registration";
 import Awareness from "./components/AwarenessSession/Awareness";
-import ShinyEffect from "./components/ShinyEffect/ShinyEffect";
+import About from "./components/AboutUs/About";
+import Timeline from "./components/Timeline/Timeline";
+import Sponsors from "./components/Sponsorship/Sponsors"
+import WinningPrizes from "./components/WinningPrizes/WinningPrizes";
 import Team from "./components/ContactUs/Contact";
 import Footer from "./components/Footer/Footer";
-import WinningPrizes from "./components/WinningPrizes/WinningPrizes";
-import About from "./components/AboutUs/About";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 
 const App = () => {
@@ -27,11 +29,11 @@ const App = () => {
               <Awareness />
               <section id="about"><About /></section>
               <section id="timeline"><Timeline /></section>
+              <Sponsors />
               <section id="prizes"> <WinningPrizes /></section>
               <section id="contact"><Team /></section>
               <Footer />
             </div>} />
-
           <Route path="/register" element={<RegisterForm />} />
         </Routes>
       </div>
