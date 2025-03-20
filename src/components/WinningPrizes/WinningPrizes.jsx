@@ -1,12 +1,12 @@
 import React from "react";
 import { GiTrophyCup } from "react-icons/gi";
 
-const WinningPrices = () => {
+const WinningPrizes = () => {
   return (
     <div className="px-10 md:px-20 p-5 max-w-screen h-full w-f  min-h-screen py-10 items-center justify-center mt-10">
       <div className=" font-krona text-2xl text-white justify-center items-center content-center flex">
         <h1 className=" font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
-          PRICES
+          PRIZES
         </h1>
       </div>
 
@@ -141,4 +141,5 @@ function Old() {
     </>
   );
 }
-export default WinningPrices;
+
+export default WinningPrizes;
