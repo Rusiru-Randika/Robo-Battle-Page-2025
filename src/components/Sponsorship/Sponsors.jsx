@@ -4,7 +4,6 @@ const sponsors = [
     { id: 3, name: "Sponsor C", logo: "/logos/sponsor-c.png" },
     { id: 4, name: "Sponsor D", logo: "/logos/sponsor-d.png" },
 ];
-
 const SponsorsSection = () => {
     return (
         <section className="py-12 ">
