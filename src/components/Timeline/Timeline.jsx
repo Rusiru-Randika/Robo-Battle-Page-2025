@@ -11,10 +11,12 @@ export function StartCap() {
     );
 }
 
+
 // MiddleComponent (Repeatable)
 export function MiddleComponent({ title, description, date, children }) {
     return (
         <div className="relative w-full">
+            {/* SVG element and Date */}
             <div className="flex">
                 <div className="w-full">
                     <svg width="936" height="491" viewBox="0 0 936 491" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,15 +37,18 @@ export function MiddleComponent({ title, description, date, children }) {
                         </defs>
                     </svg>
                 </div>
-                <h1 className="w-full translate-y-8 p">{date}</h1>
+                <h1 className="w-full translate-y-8 px-3 font-poppins">{date}</h1>
             </div>
-            <div className="absolute bottom-60 w-full flex justify-center" >
-                <div className="border p-10 rounded-3xl">
-                    <h2>{title}</h2>
-                    <p>{description}</p>
+            {/* Card */}
+            <div className="absolute top-20 w-full flex justify-center">
+                <div className="border p-10 rounded-3xl bg-[rgba(217,217,217,0.2)] backdrop-blur-sm w-4/5 h-80">
+                    <h2 style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }} className="font-bebasneue pl-7 text-white">{title}</h2>
+                    <p className="font-poppins pl-7 text-white">{description}</p>
                     {children}
                 </div>
             </div>
+            {/* Registration Officially Open */}
+
         </div>
     );
 }
@@ -62,11 +67,40 @@ export function EndCap() {
 // Timeline Component (Default Export)
 export default function Timeline() {
     return (
-        <div className="text-white relative flex-col px-10 h-auto">
-            <StartCap />
-            <MiddleComponent title="Registration closees" date="2024 June 12" description="Registration deadline for UOK Robot battle 2025" ><button><a href="Registration">Register today</a></button></MiddleComponent>
-            <MiddleComponent title="Event012" date="2024 June 24" description="Awareness sesion" ></MiddleComponent>
-            <EndCap />
+        <div>
+            <h1 className=" font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
+                Timeline
+            </h1>
+            <div className="text-white relative flex-col px-10 h-auto">
+                <StartCap />
+                <MiddleComponent title="Registration closees" date="2024 June 12" description="Registration deadline for UOK Robot battle 2025" >
+                    <button className="font-transrobotics text-3xl md:text-3xl justify-center items-center content-center px-8 py-4 bg-gradient-to-r from-[#139DFF] to-[#0B5E99] rounded-[54px]">
+                        <a href="Registration">Register today</a>
+                    </button>
+                </MiddleComponent>
+                <MiddleComponent title="Event012" date="2024 June 24" description="Awareness sesion" ></MiddleComponent>
+                <EndCap />
+            </div>
         </div>
     );
 }
+
+// /* 2024 June 12 */
+
+// position: absolute;
+// width: 226px;
+// height: 54px;
+// left: 1219px;
+// top: 5569px;
+
+// font-family: 'Poppins';
+// font-style: normal;
+// font-weight: 400;
+// font-size: 36px;
+// line-height: 54px;
+// /* identical to box height */
+// text-align: center;
+
+// color: #FFFFFF;
+
+

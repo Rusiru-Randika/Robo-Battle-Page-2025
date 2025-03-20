@@ -4,11 +4,16 @@ const sponsors = [
     { id: 3, name: "Sponsor C", logo: "/logos/sponsor-c.png" },
     { id: 4, name: "Sponsor D", logo: "/logos/sponsor-d.png" },
 ];
+
+
 const SponsorsSection = () => {
     return (
         <section className="py-12 ">
+
             <div className="text-white container mx-auto text-center">
-                <h2 className=" text-3xl font-bold mb-8">Our Sponsors</h2>
+                <h1 className=" font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
+                    OUR SPONSORS
+                </h1>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                     {sponsors.map((sponsor) => (
                         <div
