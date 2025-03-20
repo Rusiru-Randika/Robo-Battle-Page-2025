@@ -1,8 +1,9 @@
+const fileLocation = "../../../public/SponsorsLogo/"
 const sponsors = [
-    { id: 1, name: "Sponsor A", logo: "/logos/sponsor-a.png" },
-    { id: 2, name: "Sponsor B", logo: "/logos/sponsor-b.png" },
-    { id: 3, name: "Sponsor C", logo: "/logos/sponsor-c.png" },
-    { id: 4, name: "Sponsor D", logo: "/logos/sponsor-d.png" },
+    { id: 1, name: "Sponsor A", logo: "sponsor-logo1.png" },
+    { id: 2, name: "Sponsor B", logo: "sponsor-logo1.png" },
+    { id: 3, name: "Sponsor C", logo: "sponsor-logo1.png" },
+    { id: 4, name: "Sponsor D", logo: "sponsor-logo1.png" },
 ];
 
 
@@ -21,9 +22,9 @@ const SponsorsSection = () => {
                             className="p-4shadow rounded-lg flex items-center justify-center transition-transform duration-300 hover:scale-105"
                         >
                             <img
-                                src={sponsor.logo}
+                                src={`${fileLocation}${sponsor.logo}`}
                                 alt={sponsor.name}
-                                className="h-16 w-auto"
+                                className="h-30 w-auto"
                             />
                         </div>
                     ))}

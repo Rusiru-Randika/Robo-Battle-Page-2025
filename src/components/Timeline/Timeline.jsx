@@ -67,7 +67,7 @@ export function EndCap() {
 // Timeline Component (Default Export)
 export default function Timeline() {
     return (
-        <div>
+        <div className="pt-20">
             <h1 className=" font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
                 Timeline
             </h1>
@@ -85,22 +85,5 @@ export default function Timeline() {
     );
 }
 
-// /* 2024 June 12 */
-
-// position: absolute;
-// width: 226px;
-// height: 54px;
-// left: 1219px;
-// top: 5569px;
-
-// font-family: 'Poppins';
-// font-style: normal;
-// font-weight: 400;
-// font-size: 36px;
-// line-height: 54px;
-// /* identical to box height */
-// text-align: center;
-
-// color: #FFFFFF;
 
 
