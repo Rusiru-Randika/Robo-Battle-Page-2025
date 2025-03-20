@@ -28,7 +28,7 @@ const App = () => {
               <section id="register"><Registration /></section>
               <Awareness />
               <section id="about"><About /></section>
-              <section id="timeline"><Timeline /></section>
+              <section className="flex justify-center m-auto" id="timeline"><Timeline /></section>
               <Sponsors />
               <section id="prizes"> <WinningPrizes /></section>
               <section id="contact"><Team /></section>
