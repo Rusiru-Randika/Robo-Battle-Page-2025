@@ -29,7 +29,7 @@ const Home = () => {
               <Button
                 text={"Public Calender"}
                 url={"/Calender"}
-                className="font-transrobotics text-black bg-gradient-to-r from-white to-sky-100 hover:text-blue-600 rounded-[54px] px-6 py-3 hover:bg-gradient-to-r hover:from-white hover:text-blue-600 hover:to-sky-400 border-none"
+                className="font-transrobotics text-grey-100 bg-gradient-to-r from-white to-sky-100 hover:text-blue-600 rounded-[54px] px-6 py-3 hover:bg-gradient-to-r hover:from-white hover:text-blue-600 hover:to-sky-400 border-none"
               />
               <Button
                 text={"Register"}
@@ -44,8 +44,6 @@ const Home = () => {
           <img src={homeLogo} alt="Home Logo" className="mx-auto" width="550" />
         </div>
       </div>
-      {/* Auto Image Slider */}
-      <Gallery />
     </div>
   );
 };

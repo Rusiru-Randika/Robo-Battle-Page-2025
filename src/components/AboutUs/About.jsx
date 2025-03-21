@@ -5,10 +5,10 @@ export default function About() {
     <div className="py-20 px-10 text-white">
       <div className="max-w-4xl mx-auto bg-[#1A1F39] rounded-3xl p-10 shadow-lg">
         <h1 className="font-transrobotics text-4xl md:text-5xl text-center text-transparent bg-clip-text bg-gradient-to-b from-[#6EE7B7] to-[#3B82F6] mb-8">
-          What is UCK Robot Battle?
+          What is UOK Robot Battle?
         </h1>
         <p className="font-poppins text-lg text-white mb-8">
-          <strong>UCK Robot Battles 2025</strong>, an intra-university open
+          <strong>UOK Robot Battles 2025</strong>, an intra-university open
           event hosted by the University of Kelaniya’s Electronics and Computer
           Science Club, aims to foster innovation and technological advancement
           among students by providing a platform to showcase their creativity
