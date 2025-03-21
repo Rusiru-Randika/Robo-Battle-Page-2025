@@ -92,13 +92,20 @@ const Team = () => (
     <h1 className="py-10 md: font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
       CONTACT US
     </h1>
-    <Swiper className="overflow-visible px-5"
-      spaceBetween={1}
-      slidesPerView={1}
+    <Swiper className="overflow-visible"
+      spaceBetween={100}
+      slidesPerView={window.innerWidth < 760 ? 1 : 2} // Adjust for responsiveness
       loop={true}
-      autoplay={{ delay: 3000 }}
+      autoplay={{
+        delay: 0,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      }}
+      speed={2800} // Adjust speed (Lower = Faster)
+      freeMode={true} // Makes it slide smoothly
       modules={[Autoplay]}
     >
+
       {teamMembers.map((member, index) => (
         <SwiperSlide key={member.name}>
           <TeamCard
