@@ -16,7 +16,7 @@ const images = [
 const Gallery = () => {
   return (
     <div>
-      <h1 className="text-center text-4xl font-bold mt-10 font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
+      <h1 className="text-center text-4xl font-bold mt-10 font-transrobotics md:text-4xl justify-center items-center content-center px-10 flex md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
         YEAR 2024
       </h1>
       <div className="w-full max-w-6xl mx-auto mt-10">

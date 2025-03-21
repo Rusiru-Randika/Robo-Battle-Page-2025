@@ -1,4 +1,9 @@
 import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/autoplay";
+
 const fileLocation = "../../../public/People/"
 const teamMembers = [
   {
@@ -21,17 +26,35 @@ const teamMembers = [
     phone: "+94 76 786 3340",
     email: "himalgeethanjana18@gmail.com",
     photo: "person1.png"
+  }, {
+    role: "Post",
+    name: "L H G Gunawardhana",
+    phone: "+94 76 786 3340",
+    email: "himalgeethanjana18@gmail.com",
+    photo: "person1.png"
+  }, {
+    role: "Post",
+    name: "L H G Gunawardhana",
+    phone: "+94 76 786 3340",
+    email: "himalgeethanjana18@gmail.com",
+    photo: "person1.png"
+  }, {
+    role: "Post",
+    name: "L H G Gunawardhana",
+    phone: "+94 76 786 3340",
+    email: "himalgeethanjana18@gmail.com",
+    photo: "person1.png"
   },
 ];
 
 const TeamCard = ({ member, index }) => (
   <div
-    className={`text-white flex`}
+    className={`text-white py-6 flex`}
   >
     {/* background */}
     <div className="w-[146.29px] h-[263.62px] z-10 bg-gradient-to-b from-[#D9D9D9] via-[#62B8EE] to-[#009DFF] rounded-[48px_0px]"></div>
     {/* details */}
-    <div className="pl-[100px] py-7">
+    <div className="pl-[100px] flex-col justify-center py-7">
       {/* position */}
       <div className=" flex justify-center items-center w-[161px] h-[30px] bg-[#0066FF] rounded-[32px_0px]">
         <h3 className="font-bold ">{member.role}</h3>
@@ -65,19 +88,26 @@ const TeamCard = ({ member, index }) => (
 );
 
 const Team = () => (
-  <div className=" md:mb-20 md:mt-[-50px]  py-20">
-    <h1 className="py-10 font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
+  <div className="md:mb-20 md:mt-[-50px] py-20">
+    <h1 className="py-10 md: font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
       CONTACT US
     </h1>
-    <div className="flex flex-col gap-6 p-6 md:flex-row md:justify-center ">
+    <Swiper className="overflow-visible px-5"
+      spaceBetween={1}
+      slidesPerView={1}
+      loop={true}
+      autoplay={{ delay: 3000 }}
+      modules={[Autoplay]}
+    >
       {teamMembers.map((member, index) => (
-        <TeamCard
-          key={member.name}
-          member={member}
-          index={index}
-        />
+        <SwiperSlide key={member.name}>
+          <TeamCard
+            member={member}
+            index={index}
+          />
+        </SwiperSlide>
       ))}
-    </div>
+    </Swiper>
   </div>
 );
 
