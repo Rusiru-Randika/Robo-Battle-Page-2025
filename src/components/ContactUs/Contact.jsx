@@ -6,31 +6,29 @@ const teamMembers = [
     name: "L H G Gunawardhana",
     phone: "+94 76 786 3340",
     email: "himalgeethanjana18@gmail.com",
-    photo: "person2"
+    photo: "person1.png"
   },
   {
-    role: "Senior Treasurer",
-    name: "Dr Kasun Piyumal",
-    email: "Kasunp@kln.ac.lk",
-    photo: "kasun sir.jpg",
-    description:
-      "Lecturer, Department of Physics and Electronics, Faculty of Science, University of Kelaniya",
+    role: "Project Manager",
+    name: "L H G Gunawardhana",
+    phone: "+94 76 786 3340",
+    email: "himalgeethanjana18@gmail.com",
+    photo: "person1.png"
   },
   {
-    role: " President",
-    name: "Chamith Dilshan",
-    phone: "+94 78 256 3766",
-    email: "dilshankmc@gmail.com",
-    photo: "person1"
-
+    role: "Project Manager",
+    name: "L H G Gunawardhana",
+    phone: "+94 76 786 3340",
+    email: "himalgeethanjana18@gmail.com",
+    photo: "person1.png"
   },
 ];
 
 const TeamCard = ({ member, className, index }) => (
   <div
-    className={`text-white bg-gradient-to-b from-purple-950 to-indigo-950 p-6 rounded-2xl shadow-lg flex flex-col items-center text-center ${className}`}
+    className={`text-white relative ${className}`}
   >
-    <img src={`${fileLocation}${member.photo}`} alt={member.name} className="w-24 h-24 z-20 absolute"/>
+    <img src={`${fileLocation}${member.photo}`} alt={member.name} className="w-50 h-50 z-20 absolute" />
     <div className=" z-10 flex justify-center items-center w-[161px] h-[30px] bg-[#0066FF] rounded-[32px_0px]"><h3 className="m-auto mb-2 text-sm font-bold ">{member.role}</h3></div>
 
     <p className="mb-2 ">{member.name}</p>
@@ -66,8 +64,8 @@ const TeamCard = ({ member, className, index }) => (
 );
 
 const Team = () => (
-  <div className=" md:mb-20 md:mt-[-50px] mb-10 -mt-10">
-    <h1 className=" font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
+  <div className=" md:mb-20 md:mt-[-50px]  py-20">
+    <h1 className="py-10 font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
       CONTACT US
     </h1>
 
