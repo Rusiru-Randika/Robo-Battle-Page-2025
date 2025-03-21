@@ -23,7 +23,7 @@ const SponsorsSection = () => {
                             <img
                                 src={`${fileLocation}${sponsor.logo}`}
                                 alt={sponsor.name}
-                                className="h-30 w-auto"
+                                className="h-30 "
                             />
                         </div>
                     ))}
