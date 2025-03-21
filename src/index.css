@@ -44,7 +44,6 @@ p {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-
-  z-index: 1;
+  z-index: 1; /* Ensure this is higher than other elements */
   background: radial-gradient(circle, #e95c25, transparent 70%);
 }

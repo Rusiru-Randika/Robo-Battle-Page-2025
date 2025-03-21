@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import Countdown from "./components/countdown";
 import Registration from "./components/Registration/Registration";
-import Awareness from "./components/AwarenessSession/Awareness";
+// import Awareness from "./components/AwarenessSession/Awareness";
 import Gallery from "./components/Gallery/Gallery";
 import About from "./components/AboutUs/About";
 import Timeline from "./components/Timeline/Timeline";
@@ -30,22 +30,33 @@ const App = () => {
                   <Home />
                 </section>
                 <Countdown />
-                <section id="register">
+                {/* <section id="register">
                   <Registration />
-                </section>
-                <Awareness />
-                <section id="about">
+                </section> */}
+                {/* <Awareness /> */}
+                <section id="about" className="pt-10">
+                  {" "}
+                  {/* Add padding-top */}
                   <About />
                 </section>
                 <Gallery />
-                <section className="flex justify-center m-auto" id="timeline">
+                <section
+                  className="flex justify-center m-auto pt-10"
+                  id="timeline"
+                >
+                  {" "}
+                  {/* Add padding-top */}
                   <Timeline />
                 </section>
-                <section id="prizes">
+                <section id="prizes" className="pt-10">
+                  {" "}
+                  {/* Add padding-top */}
                   <WinningPrizes />
                 </section>
                 <Sponsors />
-                <section id="contact">
+                <section id="contact" className="pt-10">
+                  {" "}
+                  {/* Add padding-top */}
                   <Team />
                 </section>
                 <Footer />

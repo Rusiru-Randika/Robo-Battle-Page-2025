@@ -28,12 +28,12 @@ const Home = () => {
               <Button
                 text={"Public Calender"}
                 url={"/Calender"}
-                className="font-transrobotics bg-gradient-to-r from-white to-sky-400 hover:text-blue-600 text-black rounded-[54px] px-6 py-3 hover:bg-gradient-to-r hover:from-white hover:to-sky-400 hover:text-blue-600 border-none"
+                className="font-transrobotics text-black bg-gradient-to-r from-white to-sky-100 hover:text-blue-600 rounded-[54px] px-6 py-3 hover:bg-gradient-to-r hover:from-white hover:text-blue-600 hover:to-sky-400 border-none"
               />
               <Button
                 text={"Register"}
                 url={"/Register"}
-                className="font-transrobotics bg-gradient-to-r from-sky-500 to-sky-700 text-white rounded-[54px] px-6 py-3 hover:bg-gradient-to-r hover:text-black border-none"
+                className="font-transrobotics bg-gradient-to-r from-sky-500 to-sky-700 text-white rounded-[54px] px-6 py-3 hover:bg-gradient-to-r hover:from-white hover:to-sky-400 hover:text-blue-600 border-none"
               />
             </div>
           </div>

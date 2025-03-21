@@ -10,10 +10,18 @@ const About = () => {
       <div className=" flex flex-col justify-center items-center gap-8 mt-10 content-center md:flex-row md:justify-between lg:justify-between ">
         {/* image */}
         <div className=" ">
-          <img className="md:w-[3000px] hidden md:block shadow-2xl shadow-violet-500 rounded-lg md:mb-20 " src="/about-lg.jpg" alt="robo" />
+          <img
+            className="md:w-[3000px] hidden md:block shadow-2xl shadow-violet-500 rounded-lg md:mb-20 "
+            src="/about-lg.jpg"
+            alt="robo"
+          />
         </div>
         <div>
-          <img className=" md:hidden shadow-2xl shadow-violet-500 rounded-lg w-60 h-60" src=" /about-front.jpg" alt="robo  mobile screen" />
+          <img
+            className=" md:hidden shadow-2xl shadow-violet-500 rounded-lg w-60 h-60"
+            src=" /about-front.jpg"
+            alt="robo  mobile screen"
+          />
         </div>
         <div className="md:flex md:items-start flex flex-col justify-center items-center gap-4 content-center md:mt-10 md:ml-20 ">
           <div className=" font-krona text-xl md:text-3xl text-white text-center md:text-start ">
@@ -23,7 +31,7 @@ const About = () => {
           </div>
           <div className=" font-poppins text-white text-lg">
             <p className=" text-center opacity-80 md:justify-center md:text-start md:py-5">
-              UOK Robot Battles 2024, an intra-university open event hosted by
+              UOK Robot Battles 2025, an intra-university open event hosted by
               the University of Kelaniya's Electronics and Computer Science
               Club, aims to foster innovation and technological advancement
               among students by providing a platform to showcase their
@@ -32,7 +40,7 @@ const About = () => {
               CM) and Light-Weight (max 2.5 KG, 25 CM x 25 CM). It seeks to
               inspire excellence in technology, encouraging students to
               experiment, collaborate, and explore the potential of robotics
-              while bringing together a community of passionate enthusiasts.
+              while bringing together a community of passionate enthusiasts.
             </p>
             <div className="py-5 flex justify-center md:flex md:justify-start">
               {/* <a href=" https://drive.google.com/drive/folders/13tm3gtQj4lEXUJWDt4vntjc1XGCUjIaE ">
