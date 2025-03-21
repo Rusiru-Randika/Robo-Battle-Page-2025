@@ -29,7 +29,7 @@ const App = () => {
                 <section id="home" className="pt-5">
                   <Home />
                 </section>
-                <Countdown />
+                {/* <Countdown /> */}
                 {/* <section id="register">
                   <Registration />
                 </section> */}
