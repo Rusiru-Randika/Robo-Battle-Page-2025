@@ -9,8 +9,7 @@ const sponsors = [
 
 const SponsorsSection = () => {
     return (
-        <section className="py-12 ">
-
+        <section className="pt-12 ">
             <div className="text-white container mx-auto text-center">
                 <h1 className=" font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
                     OUR SPONSORS

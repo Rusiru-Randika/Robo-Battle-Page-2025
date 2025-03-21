@@ -49,8 +49,6 @@ const App = () => {
                   <Timeline />
                 </section>
                 <section id="prizes" className="pt-10">
-                  {" "}
-                  {/* Add padding-top */}
                   <WinningPrizes />
                 </section>
                 <Sponsors />
