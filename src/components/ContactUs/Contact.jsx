@@ -24,11 +24,14 @@ const teamMembers = [
   },
 ];
 
+
+
+
+
 const TeamCard = ({ member, className, index }) => (
   <div
-    className={`text-white relative ${className}`}
+    className={`text-white overflow ${className}`}
   >
-    <img src={`${fileLocation}${member.photo}`} alt={member.name} className="w-50 h-50 z-20 absolute" />
     <div className=" z-10 flex justify-center items-center w-[161px] h-[30px] bg-[#0066FF] rounded-[32px_0px]"><h3 className="m-auto mb-2 text-sm font-bold ">{member.role}</h3></div>
 
     <p className="mb-2 ">{member.name}</p>
@@ -55,7 +58,9 @@ const TeamCard = ({ member, className, index }) => (
         </p>
       </div>
     </div>
-    <div className="absolute z-1">
+    {/* image and background */}
+    <div className="relative">
+      <img src={`${fileLocation}${member.photo}`} alt={member.name} className="w-[265px] h-auto z-20 absolute" />
       <div className=" w-[146.29px] h-[263.62px] bg-gradient-to-b from-[#D9D9D9] via-[#62B8EE] to-[#009DFF] rounded-[48px_0px]"></div>
     </div>
 
