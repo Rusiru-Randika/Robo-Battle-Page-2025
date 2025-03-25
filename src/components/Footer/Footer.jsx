@@ -51,21 +51,21 @@ function Footer() {
       <div className="flex justify-center items-center gap-8 md:gap-16 lg:gap-24 py-8 bg-black">
         <div className="flex justify-center items-center">
           <img
-            src="../../../public/Branding/UniLogo.svg"
+            src="/Branding/UniLogo.svg"
             alt="Logo 1"
             className="h-16 md:h-20 lg:h-24 w-auto"
           />
         </div>
         <div className="flex justify-center items-center">
           <img
-            src="../../../public/Branding/Home-Logo.svg"
+            src="/Branding/Home-Logo.svg"
             alt="Logo 2"
             className="h-16 md:h-20 lg:h-24 w-auto"
           />
         </div>
         <div className="flex justify-center items-center">
           <img
-            src="public/club_logo.png"
+            src="/club_logo.png"
             alt="Logo 3"
             className="h-16 md:h-20 lg:h-24 w-auto"
           />
