@@ -1,8 +1,8 @@
 import React from "react";
 import { GiTrophyCup } from "react-icons/gi";
-import gaintnut from "../../../public/PrizesImages/GaintNut.svg";
+import gaintnut from "/PrizesImages/GaintNut.svg"; // Corrected path
 
-const WinningPrices = () => {
+const WinningPrizes = () => {
   return (
     <div className="px-10 md:px-20 p-5 max-w-screen w-full h-auto pt-10 items-center justify-center mt-10">
       <div className=" font-krona text-2xl text-white justify-center items-center content-center flex">
@@ -88,4 +88,4 @@ function MediumCard({ children, reward, className }) {
   );
 }
 
-export default WinningPrices;
+export default WinningPrizes;

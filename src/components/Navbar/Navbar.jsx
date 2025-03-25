@@ -19,8 +19,6 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 z-50 w-full bg-[#00000066] shadow-[0px_4px_4px_#00000040] backdrop-blur-[50px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(50px)_brightness(100%)] font-transrobotics">
       <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-20">
-          {" "}
-          {/* Adjusted height */}
           {/* Logo */}
           <div className="flex items-center">
             <img src={logo} alt="Logo" className="w-12 h-12" />
@@ -189,8 +187,9 @@ const NavLink = ({ to, children, activeLink, onClick }) => {
     <Link
       to={to}
       onClick={handleClick}
-      className={`w-full px-4 py-2 text-xl font-medium text-white rounded-full hover:text-[#23C4FF] ${activeLink === to ? "text-[#23C4FF]" : ""
-        }`}
+      className={`w-full px-4 py-2 text-xl font-medium text-white rounded-full hover:text-[#23C4FF] ${
+        activeLink === to ? "text-[#23C4FF]" : ""
+      }`}
     >
       {children}
     </Link>
