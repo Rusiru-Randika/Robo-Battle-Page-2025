@@ -54,19 +54,25 @@ const teamMembers = [
 
 const TeamCard = ({ member, index }) => (
   <div
-    className={`className="relative text-white py-6 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8`}
+    className={`relative text-white py-6 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8`}
   >
     {/* background */}
-    <div className="w-[146.29px] h-[263.62px] z-10 bg-gradient-to-b from-[#D9D9D9] via-[#62B8EE] to-[#009DFF] rounded-[48px_0px]"></div>
+    <div className="relative w-[146.29px] h-[263.62px] z-10 bg-gradient-to-b from-[#D9D9D9] via-[#62B8EE] to-[#009DFF] rounded-[48px_0px] flex items-center justify-center">
+      <img
+        src={member.photo}
+        alt={member.name}
+        className="w-[120px] h-[200px] object-cover rounded-[48px_0px]"
+      />
+    </div>
     {/* details */}
-    <div className="pl-[100px] flex-col justify-center py-7">
+    <div className="pl-0 md:pl-[100px] flex flex-col justify-center py-7 text-center md:text-left gap-4">
       {/* position */}
-      <div className=" flex justify-center items-center w-[161px] h-[30px] bg-[#0066FF] rounded-[32px_0px]">
-        <h3 className="font-bold ">{member.role}</h3>
+      <div className="flex justify-center md:justify-start items-center w-[161px] h-[30px] bg-[#0066FF] rounded-[32px_0px]">
+        <h3 className="font-bold text-sm md:text-base">{member.role}</h3>
       </div>
-      <div className=" inline-grid ">
-        <h1 className="font-poppins text-4xl">{member.name}</h1>
-        <div className="flex items-center">
+      <div className="inline-grid gap-2">
+        <h1 className="font-poppins text-xl md:text-4xl">{member.name}</h1>
+        <div className="flex items-center justify-center md:justify-start gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -79,9 +85,9 @@ const TeamCard = ({ member, index }) => (
               clipRule="evenodd"
             />
           </svg>
-          <p className="inline-flex px-4">{member.phone}</p>
+          <p className="inline-flex text-sm md:text-base">{member.phone}</p>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center justify-center md:justify-start gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -91,26 +97,21 @@ const TeamCard = ({ member, index }) => (
             <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
             <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
           </svg>
-          <p className="inline-flex px-4">{member.email}</p>
+          <p className="inline-flex text-sm md:text-base">{member.email}</p>
         </div>
       </div>
     </div>
-    <img
-      src={member.photo}
-      alt={member.name}
-      className="absolute w-80 z-20 translate-y-[-55px] translate-x-[-30px]"
-    />
   </div>
 );
 
 const Team = () => (
   <div className="md:mb-20 md:mt-[-50px] py-20">
-    <h1 className="py-10 md: font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
+    <h1 className="py-10 font-transrobotics text-2xl md:text-4xl justify-center items-center content-center px-4 md:px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
       CONTACT US
     </h1>
     <Swiper
       className="overflow-visible"
-      spaceBetween={100}
+      spaceBetween={20} // Reduced space for smaller screens
       slidesPerView={window.innerWidth < 760 ? 1 : 2} // Adjust for responsiveness
       loop={true}
       autoplay={{
