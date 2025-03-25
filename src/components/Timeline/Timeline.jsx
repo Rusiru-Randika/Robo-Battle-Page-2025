@@ -3,8 +3,9 @@ import React from "react";
 // StartCap Component
 export function StartCap() {
   return (
-    <div className="flex right-4 relative w-full">
+    <div className="flex right-4 relative w-full md:w-auto">
       <svg
+        className="hidden md:block" // Hide on mobile
         width="54"
         height="213"
         viewBox="0 0 54 213"
@@ -26,9 +27,10 @@ export function StartCap() {
 export function MiddleComponent({ title, description, date, children }) {
   return (
     <div className="relative w-full">
-      <div className="flex">
-        <div className="w-full">
+      <div className="flex flex-col md:flex-row">
+        <div className="w-full md:w-auto">
           <svg
+            className="hidden md:block" // Hide on mobile
             width="936"
             height="491"
             viewBox="0 0 936 491"
@@ -82,18 +84,22 @@ export function MiddleComponent({ title, description, date, children }) {
             </defs>
           </svg>
         </div>
-        <h1 className="w-full translate-y-8 px-3 font-poppins">{date}</h1>
+        <h1 className="w-full translate-y-4 md:translate-y-8 px-3 font-poppins text-center md:text-left text-base md:text-lg">
+          {date}
+        </h1>
       </div>
-      <div className="absolute top-20 w-full flex justify-center">
-        <div className="border p-10 rounded-3xl bg-[rgba(217,217,217,0.2)] backdrop-blur-sm w-4/5 h-80">
+      <div className="absolute top-10 md:top-20 w-full flex justify-center">
+        <div className="border p-3 md:p-10 rounded-3xl bg-[rgba(217,217,217,0.2)] backdrop-blur-sm w-11/12 md:w-4/5 h-auto">
           <h2
             style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
-            className="font-bebasneue pl-7 text-white"
+            className="font-bebasneue pl-3 md:pl-7 text-white text-base md:text-2xl"
           >
             {title}
           </h2>
-          <p className="font-poppins pl-7 text-white">{description}</p>
-          {children}
+          <p className="font-poppins pl-3 md:pl-7 text-white text-sm md:text-base">
+            {description}
+          </p>
+          <div className="flex justify-center md:justify-start">{children}</div>
         </div>
       </div>
     </div>
@@ -103,8 +109,9 @@ export function MiddleComponent({ title, description, date, children }) {
 // EndCap Component
 export function EndCap() {
   return (
-    <div className="flex right-4 relative w-full bottom-2">
+    <div className="flex right-4 relative w-full md:w-auto bottom-2">
       <svg
+        className="hidden md:block" // Hide on mobile
         width="173"
         height="312"
         viewBox="0 0 173 312"
@@ -125,25 +132,25 @@ export function EndCap() {
 // Timeline Component (Default Export)
 export default function Timeline() {
   return (
-    <div className="pt-20">
-      <h1 className="font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
+    <div className="pt-10 md:pt-20">
+      <h1 className="font-transrobotics text-2xl md:text-4xl justify-center items-center content-center px-5 md:px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
         Timeline
       </h1>
-      <div className="text-white relative flex-col px-10 h-auto">
+      <div className="text-white relative flex-col px-5 md:px-10 h-auto">
         <StartCap />
         <MiddleComponent
-          title="Registration closees"
+          title="Registration closes"
           date="2024 June 12"
           description="Registration deadline for UOK Robot battle 2025"
         >
-          <button className="font-transrobotics text-3xl md:text-3xl justify-center items-center content-center px-8 py-4 bg-gradient-to-r from-[#139DFF] to-[#0B5E99] rounded-[54px]">
+          <button className="font-transrobotics text-lg md:text-3xl justify-center items-center content-center px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-[#139DFF] to-[#0B5E99] rounded-[54px]">
             <a href="Registration">Register today</a>
           </button>
         </MiddleComponent>
         <MiddleComponent
           title="Event012"
           date="2024 June 24"
-          description="Awareness sesion"
+          description="Awareness session"
         ></MiddleComponent>
         <EndCap />
       </div>

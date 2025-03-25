@@ -22,7 +22,7 @@ const Home = () => {
               strategy is a calculated risk, and every engineering feat is a
               masterpiece. This is more than a contest.
             </p>
-            <div className="flex gap-5 mt-5">
+            <div className="flex flex-col md:flex-row gap-5 mt-5 items-center">
               <Button
                 text={"Public Calender"}
                 url={"/Calender"}

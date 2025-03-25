@@ -6,7 +6,7 @@ import ClubLogo from "/club_logo.png";
 function Footer() {
   return (
     <footer className="footer-distributed relative min-h-[70vh] bg-black">
-      <div className="flex flex-wrap justify-between items-center px-2 md:px-16 lg:px-24 py-6 bg-black font-poppins">
+      <div className="hidden md:flex flex-wrap justify-between items-center px-2 md:px-16 lg:px-24 py-6 bg-black font-poppins">
         <a
           href="/#"
           className="text-white text-base md:text-lg hover:text-blue-400 flex-1 text-center"
