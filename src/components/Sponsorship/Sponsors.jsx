@@ -1,29 +1,29 @@
 import React from "react";
+import sponsorLogo1 from "/public/SponsorsLogo/sponsor-logo1.png";
 
-const fileLocation = "/public/SponsorsLogo/";
 const sponsors = [
   {
     id: 1,
     name: "Sponsor A",
-    logo: "sponsor-logo1.png",
+    logo: sponsorLogo1,
     link: "https://sponsorA.com",
   },
   {
     id: 2,
     name: "Sponsor B",
-    logo: "sponsor-logo1.png",
+    logo: sponsorLogo1,
     link: "https://sponsorB.com",
   },
   {
     id: 3,
     name: "Sponsor C",
-    logo: "sponsor-logo1.png",
+    logo: sponsorLogo1,
     link: "https://sponsorC.com",
   },
   {
     id: 4,
     name: "Sponsor D",
-    logo: "sponsor-logo1.png",
+    logo: sponsorLogo1,
     link: "https://sponsorD.com",
   },
 ];
@@ -44,11 +44,7 @@ const SponsorsSection = () => {
               rel="noopener noreferrer"
               className="p-4 shadow rounded-lg flex items-center justify-center transition-transform duration-300 hover:scale-105"
             >
-              <img
-                src={`${fileLocation}${sponsor.logo}`}
-                alt={sponsor.name}
-                className="h-30 "
-              />
+              <img src={sponsor.logo} alt={sponsor.name} className="h-30 " />
             </a>
           ))}
         </div>

@@ -7,7 +7,7 @@
 @tailwind utilities;
 @font-face {
   font-family: 'SF TransRobotics Condensed';
-  src: url('./assets/fonts/SFTransRoboticsCondensed.ttf') format('truetype');
+  src: url('/public/Fonts/SFTransRoboticsCondensed.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

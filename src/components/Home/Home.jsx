@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import homeLogo from "/public/Branding/Home-Logo.svg"; // Corrected path
-import Gallery from "../Gallery/Gallery"; // Import the Gallery component
+// import Gallery from "../Gallery/Gallery"; // Remove the Gallery import
 
 const Home = () => {
   return (
@@ -45,7 +45,7 @@ const Home = () => {
         </div>
       </div>
       {/* Gallery Component */}
-      <Gallery />
+      {/* <Gallery /> */}
     </div>
   );
 };
