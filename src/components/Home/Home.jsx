@@ -44,6 +44,8 @@ const Home = () => {
           <img src={homeLogo} alt="Home Logo" className="mx-auto" width="550" />
         </div>
       </div>
+      {/* Gallery Component */}
+      <Gallery />
     </div>
   );
 };
