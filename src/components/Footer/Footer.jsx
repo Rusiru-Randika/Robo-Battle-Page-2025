@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { IoLogoFacebook } from "react-icons/io";
 import { ImLinkedin } from "react-icons/im";
 import { ImYoutube } from "react-icons/im";
+import UniLogo from "/Branding/UniLogo.svg"; // Import the image
+import HomeLogo from "/Branding/Home-Logo.svg"; // Import the image
+import ClubLogo from "/club_logo.png"; // Import the image
 
 function Footer() {
   const [count, setCount] = useState(0);
@@ -51,21 +54,21 @@ function Footer() {
       <div className="flex justify-center items-center gap-8 md:gap-16 lg:gap-24 py-8 bg-black">
         <div className="flex justify-center items-center">
           <img
-            src="/Branding/UniLogo.svg"
+            src={UniLogo} // Link to the imported image
             alt="Logo 1"
             className="h-16 md:h-20 lg:h-24 w-auto"
           />
         </div>
         <div className="flex justify-center items-center">
           <img
-            src="/Branding/Home-Logo.svg"
+            src={HomeLogo} // Link to the imported image
             alt="Logo 2"
             className="h-16 md:h-20 lg:h-24 w-auto"
           />
         </div>
         <div className="flex justify-center items-center">
           <img
-            src="/club_logo.png"
+            src={ClubLogo} // Link to the imported image
             alt="Logo 3"
             className="h-16 md:h-20 lg:h-24 w-auto"
           />
