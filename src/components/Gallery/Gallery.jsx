@@ -20,18 +20,17 @@ const Gallery = () => {
         YEAR 2024
       </h1>
       <div className="w-full max-w-6xl mx-auto mt-10">
-        {/* First Slider Section */}
         <Swiper
           spaceBetween={20}
-          slidesPerView={3} // Adjust for responsiveness
+          slidesPerView={3}
           loop={true}
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
             pauseOnMouseEnter: false,
           }}
-          speed={2800} // Adjust speed (Lower = Faster)
-          freeMode={true} // Makes it slide smoothly
+          speed={2800}
+          freeMode={true}
           modules={[Autoplay]}
           className="rounded-lg"
         >
@@ -47,18 +46,17 @@ const Gallery = () => {
         </Swiper>
       </div>
       <div className="w-full max-w-6xl mx-auto mt-10">
-        {/* Second Slider Section */}
         <Swiper
           spaceBetween={20}
-          slidesPerView={3} // Adjust for responsiveness
+          slidesPerView={3}
           loop={true}
           autoplay={{
             delay: 5,
             disableOnInteraction: false,
             pauseOnMouseEnter: false,
           }}
-          speed={3000} // Adjust speed (Lower = Faster)
-          freeMode={true} // Makes it slide smoothly
+          speed={3000}
+          freeMode={true}
           modules={[Autoplay]}
           className="rounded-lg"
         >
@@ -73,7 +71,6 @@ const Gallery = () => {
           ))}
         </Swiper>
       </div>
-      {/* Add SVGs below the gallery */}
       <div className="w-full max-w-6xl mx-auto mt-10 flex justify-center items-center">
         <svg width="10" height="10" viewBox="0 0 10 10" className="mr-2">
           <circle cx="5" cy="5" r="5" fill="#ffffff" />

@@ -29,7 +29,7 @@ export default function About() {
           bringing together a community of passionate enthusiasts.
         </p>
         <div className="flex justify-center">
-          <button className="font-transrobotics text-2xl md:text-3xl justify-center items-center content-center px-8 py-4 bg-gradient-to-r from-[#6EE7B7] to-[#3B82F6] rounded-[54px] hover:from-[#3B82F6] hover:to-[#6EE7B7] transition-all duration-300">
+          <button className="font-transrobotics text-2xl md:text-3xl px-8 py-4 bg-gradient-to-r from-[#6EE7B7] to-[#3B82F6] rounded-[54px] hover:from-[#3B82F6] hover:to-[#6EE7B7] transition-all duration-300">
             <a href="/about">Read More</a>
           </button>
         </div>

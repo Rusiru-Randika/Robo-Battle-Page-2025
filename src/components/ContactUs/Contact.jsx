@@ -64,9 +64,6 @@ const TeamCard = ({ member, index }) => (
       </div>
       <div className=" inline-grid ">
         <h1 className="font-poppins text-4xl">{member.name}</h1>
-        {member.description && (
-          <p className="text-sm opacity-90">{member.description}</p>
-        )}
         <div className="flex items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"

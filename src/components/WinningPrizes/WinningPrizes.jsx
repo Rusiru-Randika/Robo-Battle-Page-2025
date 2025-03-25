@@ -1,6 +1,5 @@
 import React from "react";
-import { GiTrophyCup } from "react-icons/gi";
-import gaintnut from "/public/PrizesImages/GaintNut.svg"; // Corrected path
+import gaintnut from "/public/PrizesImages/GaintNut.svg";
 
 const WinningPrizes = () => {
   return (
@@ -10,7 +9,6 @@ const WinningPrizes = () => {
           PRIZES
         </h1>
       </div>
-
       <div className="font-transrobotics flex flex-col justify-center items-center gap-2 md:gap-8 mt-10 md:flex-row md:items-center md:justify-center lg:justify-center md:content-center">
         <LargeCard>
           <span className="text-white">

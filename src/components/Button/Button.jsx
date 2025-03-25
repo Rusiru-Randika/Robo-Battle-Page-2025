@@ -9,8 +9,8 @@ const Button = ({ text, onClick, type = "button", className = "", url }) => {
       <a
         href={url}
         className={`${baseClasses} ${className}`}
-        target="_blank" // Opens the link in a new tab
-        rel="noopener noreferrer" // Security measure for new tabs
+        target="_blank"
+        rel="noopener noreferrer"
       >
         {text}
       </a>

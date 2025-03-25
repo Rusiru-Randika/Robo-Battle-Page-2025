@@ -1,13 +1,11 @@
 import React from "react";
 import Button from "../Button/Button";
-import homeLogo from "/public/Branding/Home-Logo.svg"; // Corrected path
-// import Gallery from "../Gallery/Gallery"; // Remove the Gallery import
+import homeLogo from "/public/Branding/Home-Logo.svg";
 
 const Home = () => {
   return (
     <div className="flex flex-col justify-center items-center px-10 text-center mt-20 mb-5">
       <div className="flex flex-col md:flex-row justify-center items-center w-full">
-        {/* Left Content */}
         <div className="w-full md:w-1/2 text-white flex flex-col justify-center items-center md:items-start text-center md:text-left gap-2 md:gap-5 md:px-20">
           <h2 className="font-transrobotics text-xl md:text-3xl opacity-90">
             UOK
@@ -18,7 +16,6 @@ const Home = () => {
           <h2 className="font-transrobotics text-xl md:text-3xl opacity-90">
             2025
           </h2>
-          {/* Event Description & Buttons */}
           <div className="flex flex-col items-center font-bebasneue mt-5">
             <p className="text-white text-lg md:text-xl leading-normal opacity-80 max-w-2xl">
               Experience the thrill of high-stakes competition, where every
@@ -39,13 +36,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-        {/* Right Content - Logo */}
         <div className="w-full md:w-1/2 flex justify-center items-center mt-5 md:mt-0">
           <img src={homeLogo} alt="Home Logo" className="mx-auto" width="550" />
         </div>
       </div>
-      {/* Gallery Component */}
-      {/* <Gallery /> */}
     </div>
   );
 };

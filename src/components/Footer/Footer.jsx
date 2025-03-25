@@ -1,14 +1,9 @@
-import React, { useState } from "react";
-import { IoLogoFacebook } from "react-icons/io";
-import { ImLinkedin } from "react-icons/im";
-import { ImYoutube } from "react-icons/im";
-import UniLogo from "/Branding/UniLogo.svg"; // Import the image
-import HomeLogo from "/Branding/Home-Logo.svg"; // Import the image
-import ClubLogo from "/club_logo.png"; // Import the image
+import React from "react";
+import UniLogo from "/Branding/UniLogo.svg";
+import HomeLogo from "/Branding/Home-Logo.svg";
+import ClubLogo from "/club_logo.png";
 
 function Footer() {
-  const [count, setCount] = useState(0);
-
   return (
     <footer className="footer-distributed relative min-h-[70vh] bg-black">
       <div className="flex flex-wrap justify-between items-center px-2 md:px-16 lg:px-24 py-6 bg-black font-poppins">
@@ -50,32 +45,30 @@ function Footer() {
         </a>
       </div>
 
-      {/* Logo section with 3 evenly spaced logos */}
       <div className="flex justify-center items-center gap-8 md:gap-16 lg:gap-24 py-8 bg-black">
         <div className="flex justify-center items-center">
           <img
-            src={UniLogo} // Link to the imported image
+            src={UniLogo}
             alt="Logo 1"
             className="h-16 md:h-20 lg:h-24 w-auto"
           />
         </div>
         <div className="flex justify-center items-center">
           <img
-            src={HomeLogo} // Link to the imported image
+            src={HomeLogo}
             alt="Logo 2"
             className="h-16 md:h-20 lg:h-24 w-auto"
           />
         </div>
         <div className="flex justify-center items-center">
           <img
-            src={ClubLogo} // Link to the imported image
+            src={ClubLogo}
             alt="Logo 3"
             className="h-16 md:h-20 lg:h-24 w-auto"
           />
         </div>
       </div>
 
-      {/* SVG Element */}
       <svg
         className="absolute left-0 bottom-0 h-full w-auto"
         width="141"
@@ -97,14 +90,12 @@ function Footer() {
         />
       </svg>
 
-      {/* Connect With Us section */}
       <div className="flex justify-center items-center py-6 bg-black">
         <h2 className="text-white text-xl md:text-2xl lg:text-3xl font-poppins">
           Connect With Us
         </h2>
       </div>
 
-      {/* Social Media Icons */}
       <div className="flex justify-center items-center gap-8 py-4 bg-black">
         <a
           href="https://wa.me/yourphonenumber"
