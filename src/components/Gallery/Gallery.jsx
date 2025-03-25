@@ -5,13 +5,13 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 // Sample images (Replace with actual paths)
-const images = [
-  "../../public/PlaceHolder.png",
-  "../../public/PlaceHolder.png",
-  "../../public/PlaceHolder.png",
-  "../../public/PlaceHolder.png",
-  "../../public/PlaceHolder.png",
-];
+import image1 from "../../../public/PlaceHolder.png";
+import image2 from "../../../public/PlaceHolder.png";
+import image3 from "../../../public/PlaceHolder.png";
+import image4 from "../../../public/PlaceHolder.png";
+import image5 from "../../../public/PlaceHolder.png";
+
+const images = [image1, image2, image3, image4, image5];
 
 const Gallery = () => {
   return (
