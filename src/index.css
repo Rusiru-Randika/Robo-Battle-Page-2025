@@ -47,3 +47,9 @@ p {
   z-index: 1; /* Ensure this is higher than other elements */
   background: radial-gradient(circle, #e95c25, transparent 70%);
 }
+
+@media (max-width: 768px) {
+  .footer-distributed {
+    min-height: 30vh;
+  }
+}

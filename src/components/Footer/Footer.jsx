@@ -147,7 +147,7 @@ function Footer() {
         </a>
       </div>
 
-      <p className="text-gray-400 text-xs md:text-sm font-normal text-center mb-8 mt-5 md:mb-9">
+      <p className="text-gray-400 text-xs md:text-sm font-normal text-center pb-4 mt-5 md:mb-9 ">
         © 2025 All rights reserved
       </p>
     </footer>

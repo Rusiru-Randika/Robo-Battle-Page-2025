@@ -11,62 +11,50 @@ const teamMembers = [
   {
     role: "Project Manager",
     name: "Supun Tharaka",
-    phone: "+94 76 786 3340",
-    email: "himalgeethanjana18@gmail.com",
+    phone: "+94 77 123 4567",
+    email: "Example@gmail.com",
+    photo: person1,
+  },
+  {
+    role: "Project Manager 2",
+    name: "Name 2",
+    phone: "+94 77 1237 4567",
+    email: "Example2@gmail.com",
     photo: person1,
   },
   {
     role: "Post",
-    name: "L H G Gunawardhana",
-    phone: "+94 76 786 3340",
-    email: "himalgeethanjana18@gmail.com",
+    name: "Name 3",
+    phone: "+94 77 123 4567",
+    email: "Example3@gmail.com",
     photo: person1,
   },
   {
     role: "Post",
-    name: "L H G Gunawardhana",
-    phone: "+94 76 786 3340",
-    email: "himalgeethanjana18@gmail.com",
-    photo: person1,
-  },
-  {
-    role: "Post",
-    name: "L H G Gunawardhana",
-    phone: "+94 76 786 3340",
-    email: "himalgeethanjana18@gmail.com",
-    photo: person1,
-  },
-  {
-    role: "Post",
-    name: "L H G Gunawardhana",
-    phone: "+94 76 786 3340",
-    email: "himalgeethanjana18@gmail.com",
-    photo: person1,
-  },
-  {
-    role: "Post",
-    name: "L H G Gunawardhana",
-    phone: "+94 76 786 3340",
-    email: "himalgeethanjana18@gmail.com",
+    name: "Name 4",
+    phone: "+94 77 123 4567",
+    email: "Example4@gmail.com",
     photo: person1,
   },
 ];
 
 const TeamCard = ({ member, index }) => (
-  <div
-    className={`className="relative text-white py-6 flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8`}
-  >
+  <div className="relative text-white py-6 flex flex-col items-center md:flex-row md:items-start gap-8 font-bebasneue">
+    {" "}
+    {/* Added font-bebasneue */}
     {/* background */}
     <div className="w-[146.29px] h-[263.62px] z-10 bg-gradient-to-b from-[#D9D9D9] via-[#62B8EE] to-[#009DFF] rounded-[48px_0px]"></div>
     {/* details */}
-    <div className="pl-[100px] flex-col justify-center py-7">
+    <div className="pl-0 md:pl-[100px] flex flex-col justify-center py-7 max-w-[90vw]">
       {/* position */}
-      <div className=" flex justify-center items-center w-[161px] h-[30px] bg-[#0066FF] rounded-[32px_0px]">
-        <h3 className="font-bold ">{member.role}</h3>
+      <div className="flex justify-center items-center w-[161px] h-[30px] bg-[#0066FF] rounded-[32px_0px]">
+        <h3 className="font-bold">{member.role}</h3>
       </div>
-      <div className=" inline-grid ">
-        <h1 className="font-poppins text-4xl">{member.name}</h1>
-        <div className="flex items-center">
+
+      <div className="inline-grid mt-2">
+        <h1 className="text-2xl md:text-4xl">{member.name}</h1>
+
+        <div className="flex items-center mt-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -81,7 +69,8 @@ const TeamCard = ({ member, index }) => (
           </svg>
           <p className="inline-flex px-4">{member.phone}</p>
         </div>
-        <div className="flex items-center">
+
+        <div className="flex items-center mt-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -98,32 +87,38 @@ const TeamCard = ({ member, index }) => (
     <img
       src={member.photo}
       alt={member.name}
-      className="absolute w-80 z-20 translate-y-[-55px] translate-x-[-30px]"
+      className="absolute w-40 md:w-80 z-20 -translate-y-[55px] -translate-x-[30px]"
     />
   </div>
 );
 
 const Team = () => (
-  <div className="md:mb-20 md:mt-[-50px] py-20">
-    <h1 className="py-10 md: font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start md:flex text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
+  <div className="md:mb-12 md:mt-[-50px] py-20 px-4 md:px-10">
+    {" "}
+    {/* Added px-4 for mobile and md:px-10 for larger screens */}
+    <h1 className="py-10 font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
       CONTACT US
     </h1>
     <Swiper
       className="overflow-visible"
       spaceBetween={100}
-      slidesPerView={window.innerWidth < 760 ? 1 : 2} // Adjust for responsiveness
-      loop={true}
+      slidesPerView={1}
+      breakpoints={{
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+      }}
+      loop={true} // Enable continuous looping
       autoplay={{
-        delay: 0,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
+        delay: 0, // No delay between slides
+        disableOnInteraction: false, // Keep autoplay active even after interaction
+        pauseOnMouseEnter: false, // Prevent pausing on mouse hover
       }}
       speed={2800} // Adjust speed (Lower = Faster)
       freeMode={true} // Makes it slide smoothly
       modules={[Autoplay]}
     >
       {teamMembers.map((member, index) => (
-        <SwiperSlide key={member.name}>
+        <SwiperSlide key={`${member.name}-${index}`}>
           <TeamCard member={member} index={index} />
         </SwiperSlide>
       ))}
