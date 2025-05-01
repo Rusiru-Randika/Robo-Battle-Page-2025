@@ -39,13 +39,14 @@ const teamMembers = [
 ];
 
 const TeamCard = ({ member, index }) => (
-  <div className="relative text-white py-6 flex flex-col items-center md:flex-row md:items-start gap-8 font-bebasneue">
-    {" "}
-    {/* Added font-bebasneue */}
-    {/* background */}
-    <div className="w-[146.29px] h-[263.62px] z-10 bg-gradient-to-b from-[#D9D9D9] via-[#62B8EE] to-[#009DFF] rounded-[48px_0px]"></div>
+<div className="relative text-white py-6 flex flex-col items-center md:flex-row md:items-start gap-2 font-bebasneue">
+  {/* background */}
+  <div className="absolute left-0 top-2/3 -translate-y-1/2 w-[146.29px] h-[263.62px] z-10 bg-gradient-to-b from-[#D9D9D9] via-[#62B8EE] to-[#009DFF] rounded-[48px_0px]"></div>
+
+  {/* content flex container */}
+  <div className="flex flex-col items-center md:flex-row md:items-start gap-8 pl-[150px]">
     {/* details */}
-    <div className="pl-0 md:pl-[100px] flex flex-col justify-center py-7 max-w-[90vw]">
+    <div className="relative md:ml-20 flex flex-col justify-center py-7 max-w-[90vw]">
       {/* position */}
       <div className="flex justify-center items-center w-[161px] h-[30px] bg-[#0066FF] rounded-[32px_0px]">
         <h3 className="font-bold">{member.role}</h3>
@@ -55,6 +56,7 @@ const TeamCard = ({ member, index }) => (
         <h1 className="text-2xl md:text-4xl">{member.name}</h1>
 
         <div className="flex items-center mt-2">
+          {/* Phone SVG */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -71,6 +73,7 @@ const TeamCard = ({ member, index }) => (
         </div>
 
         <div className="flex items-center mt-1">
+          {/* Email SVG */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -87,9 +90,11 @@ const TeamCard = ({ member, index }) => (
     <img
       src={member.photo}
       alt={member.name}
-      className="absolute w-40 md:w-80 z-20 -translate-y-[55px] -translate-x-[30px]"
+      className="absolute  left-0 top-10 w-40 md:w-80 z-20 -translate-y-[55px] -translate-x-[30px]"
     />
   </div>
+</div>
+
 );
 
 const Team = () => (
@@ -109,7 +114,7 @@ const Team = () => (
       }}
       loop={true} // Enable continuous looping
       autoplay={{
-        delay: 0, // No delay between slides
+        delay: 100000, // No delay between slides
         disableOnInteraction: false, // Keep autoplay active even after interaction
         pauseOnMouseEnter: false, // Prevent pausing on mouse hover
       }}
