@@ -28,10 +28,7 @@ const App = () => {
                   <About />
                 </section>
                 <Gallery />
-                <section
-                  className="flex justify-center m-auto pt-10"
-                  id="timeline"
-                >
+                <section className="pt-10" id="timeline">
                   <Timeline />
                 </section>
                 <section id="prizes" className="pt-10">
