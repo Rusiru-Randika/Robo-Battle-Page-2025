@@ -56,13 +56,13 @@ export default function Timeline() {
         {/* Vertical Line with Start & End Caps */}
         <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-[4px] z-0">
           {/* Top Cap */}
-          <TimelineCap />
+          <TimelineStartCap />
 
           {/* Main Line */}
           <div className="h-full bg-white w-[4px] mx-auto" />
 
           {/* Bottom Cap */}
-          <TimelineCap />
+          <TimelineEndCap />
         </div>
 
         {/* Event Rows */}
@@ -113,8 +113,15 @@ export default function Timeline() {
   );
 }
 
-// Diamond Shape at Start & End
-function TimelineCap() {
+// Shape at start
+function TimelineStartCap() {
+  return (
+    <div className="w-4 h-4 bg-white transform rotate-45 origin-center absolute left-1/2 -translate-x-1/2" />
+  );
+}
+
+// Circle Shape at End
+function TimelineEndCap() {
   return (
     <div className="w-4 h-4 bg-white rounded-full absolute left-1/2 -translate-x-1/2" />
   );
