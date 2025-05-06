@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +11,28 @@ const RegisterForm = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
+  const [countdown, setCountdown] = useState("");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const eventDate = new Date("2025-08-05T00:00:00");
+      const now = new Date();
+      const timeLeft = eventDate - now;
+
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        setCountdown("Registration closed");
+      } else {
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+        const seconds = Math.floor((timeLeft / 1000) % 60);
+        setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -67,6 +89,9 @@ const RegisterForm = () => {
           <h2 className="font-transrobotics font-bebasneue text-xl md:text-3xl opacity-90">
             FOR UOK ROBOT BATTLES 2025
           </h2>
+          <p className="font-transrobotics text-red-500 text-lg mt-2">
+            Registration closing in: {countdown}
+          </p>
         </div>
         <div className="w-full md:w-1/2 flex justify-center items-center">
           <form
