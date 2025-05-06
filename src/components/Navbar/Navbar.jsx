@@ -22,7 +22,12 @@ const Navbar = () => {
         <div className="relative flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <img src={logo} alt="Logo" className="w-12 h-12" />
+            <img
+              src={logo}
+              alt="Logo"
+              className="w-12 h-12 cursor-pointer"
+              onClick={() => (window.location.href = "/#home")} // Navigate to home
+            />
           </div>
 
           {/* Desktop Nav Links */}
@@ -77,7 +82,15 @@ const Navbar = () => {
         } sm:hidden`}
       >
         <div className="flex items-center justify-between px-6">
-          <img src={logo} alt="Logo" className="w-10 h-10" />
+          <img
+            src={logo}
+            alt="Logo"
+            className="w-10 h-10 cursor-pointer"
+            onClick={() => {
+              toggleMenu();
+              window.location.href = "/#home"; // Navigate to home
+            }}
+          />
           <button onClick={toggleMenu}>
             <FiX className="w-8 h-8 text-white" />
           </button>
