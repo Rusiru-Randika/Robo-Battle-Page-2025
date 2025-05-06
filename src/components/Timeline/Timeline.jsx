@@ -5,7 +5,7 @@ const events = [
     date: "2025 May 10",
     title: "Registration opening",
     description:
-      "Registrations for UOK ROBOT BATTLE 2025 open on the 10th of May.",
+      "Start assembling your bots and your teams. Registrations open now for the ultimate robotics showdown.",
     button: "Register",
     buttonColor: "bg-blue-500 hover:bg-blue-600",
     image: "/Timeline/Icon1.png", // Updated image path
@@ -14,7 +14,7 @@ const events = [
     date: "2025 August 05",
     title: "Registration closing",
     description:
-      "Registrations for UOK ROBOT BATTLE 2025 close on the 5th of August.",
+      "Don’t miss your chance to be part of the fiercest battle of the year. Finalize your team and register before it’s too late.",
     button: "Register Now Before Closing",
     buttonColor: "bg-red-500 hover:bg-red-600",
     image: "/Timeline/Icon2.png",
@@ -23,7 +23,7 @@ const events = [
     date: "2025 August 10",
     title: "Workshop",
     description:
-      "A workshop will be held on the 10th of August to prepare participants.",
+      "Join the official pre-battle workshop. Get guidance, tips, and insights from pros to level up your game.",
     button: "Learn More",
     buttonColor: "bg-green-500 hover:bg-green-600",
     image: "/Timeline/Icon3.png",
@@ -32,7 +32,7 @@ const events = [
     date: "2025 August 30",
     title: "Awareness Session",
     description:
-      "An awareness session will be conducted on the 30th of August.",
+      "Everything you need to know, from rules to strategies. Join us and gear up with confidence.",
     button: "Join Session",
     buttonColor: "bg-yellow-500 hover:bg-yellow-600 text-black",
     image: "/Timeline/Icon4.png",
@@ -41,7 +41,7 @@ const events = [
     date: "2025 September 05",
     title: "Robot Battle",
     description:
-      "The final Robot Battle will take place on the 5th of September.",
+      "The bots are built, the arena awaits. Greatness shows no mercy. Only one will reign supreme",
     button: "View Details",
     buttonColor: "bg-purple-500 hover:bg-purple-600",
     image: "/Timeline/Icon5.png",
