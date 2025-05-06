@@ -13,6 +13,7 @@ const Navbar = () => {
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
+    setIsOpen(false); // Close menu on mobile when a link is clicked
   };
 
   return (
@@ -23,160 +24,110 @@ const Navbar = () => {
           <div className="flex items-center">
             <img src={logo} alt="Logo" className="w-12 h-12" />
           </div>
+
           {/* Nav Links - Desktop */}
           <div className="hidden center sm:flex sm:items-center sm:ml-6 sm:space-x-4">
-            <NavLink
-              to="/#home"
-              activeLink={activeLink}
-              onClick={() => handleLinkClick("/#home")}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/#rules"
-              activeLink={activeLink}
-              onClick={() => handleLinkClick("/#rules")}
-            >
-              Rules
-            </NavLink>
-            <NavLink
-              to="/#about"
-              activeLink={activeLink}
-              onClick={() => handleLinkClick("/#about")}
-            >
-              About
-            </NavLink>
-            <NavLink
-              to="/#timeline"
-              activeLink={activeLink}
-              onClick={() => handleLinkClick("/#timeline")}
-            >
-              Timeline
-            </NavLink>
-            <NavLink
-              to="/#prizes"
-              activeLink={activeLink}
-              onClick={() => handleLinkClick("/#prizes")}
-            >
-              Prizes
-            </NavLink>
-            <NavLink
-              to="/#contact"
-              activeLink={activeLink}
-              onClick={() => handleLinkClick("/#contact")}
-            >
-              Contact
-            </NavLink>
+            {["home", "rules", "about", "timeline", "prizes", "contact"].map(
+              (section) => (
+                <NavLink
+                  key={section}
+                  to={`/#${section}`}
+                  activeLink={activeLink}
+                  onClick={() => handleLinkClick(`/#${section}`)}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </NavLink>
+              )
+            )}
           </div>
+
+          {/* Register Button */}
           <div className="relative right-0 flex items-center">
             <Link
               to="/register"
-              className="bg-gradient-to-r text-white from-sky-500 to-sky-700 rounded-[54px] px-4 py-2 hover:bg-gradient-to-r hover:from-white hover:to-sky-400  hover:text-blue-600"
+              className="bg-gradient-to-r text-white from-sky-500 to-sky-700 rounded-[54px] px-4 py-2 hover:bg-gradient-to-r hover:from-white hover:to-sky-400 hover:text-blue-600"
             >
-              <div className="text-center  text-xl font-normal">Register</div>
+              <div className="text-center text-xl font-normal">Register</div>
             </Link>
           </div>
+
           {/* Mobile Menu Button */}
           <div className="sm:hidden">
             <button
-              className="p-2 text-purple-300 rounded-md hover:text-violet-500 hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="p-2 text-white rounded-md hover:text-blue-400 focus:outline-none"
               onClick={toggleMenu}
             >
               {isOpen ? (
-                <FiX className="w-6 h-6" />
+                <FiX className="w-8 h-8" />
               ) : (
-                <FiMenu className="w-6 h-6" />
+                <FiMenu className="w-8 h-8" />
               )}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Sidebar - Mobile */}
+      {/* Mobile Backdrop Blur */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex">
-          {/* Sidebar Content */}
-          <div className="w-full h-full bg-purple-600 p-4 space-y-4 transition-transform duration-300 ease-in-out transform backdrop-filter backdrop-blur-lg shadow-lg">
-            {/* Close Button */}
-            <div className="flex items-center justify-between">
-              <button
-                className="text-white focus:outline-none"
-                onClick={toggleMenu}
-              >
-                <FiX className="w-10 h-10" />
-              </button>
-            </div>
-
-            {/* Navigation Links */}
-            <div
-              className="flex flex-col items-start space-y-4"
-              onClick={toggleMenu}
-            >
-              <NavLink
-                to="/#home"
-                activeLink={activeLink}
-                onClick={() => handleLinkClick("/#home")}
-              >
-                Home
-              </NavLink>
-              <NavLink
-                to="/#rules"
-                activeLink={activeLink}
-                onClick={() => handleLinkClick("/#rules")}
-              >
-                Rules
-              </NavLink>
-              <NavLink
-                to="/#about"
-                activeLink={activeLink}
-                onClick={() => handleLinkClick("/#about")}
-              >
-                About
-              </NavLink>
-              <NavLink
-                to="/#timeline"
-                activeLink={activeLink}
-                onClick={() => handleLinkClick("/#timeline")}
-              >
-                Timeline
-              </NavLink>
-              <NavLink
-                to="/#prizes"
-                activeLink={activeLink}
-                onClick={() => handleLinkClick("/#prizes")}
-              >
-                Prizes
-              </NavLink>
-              <NavLink
-                to="/#contact"
-                activeLink={activeLink}
-                onClick={() => handleLinkClick("/#contact")}
-              >
-                Contact
-              </NavLink>
-            </div>
-          </div>
-        </div>
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-lg z-40"
+          onClick={toggleMenu}
+        />
       )}
+
+      {/* Sidebar - Mobile */}
+      <div
+        className={`fixed top-0 right-0 z-50 w-full h-full p-6 bg-black transform transition-transform duration-300 shadow-lg ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        } sm:hidden`}
+      >
+        <div className="flex items-center justify-between mb-8">
+          <img src={logo} alt="Logo" className="w-10 h-10" />
+          <button onClick={toggleMenu}>
+            <FiX className="w-8 h-8 text-white" />
+          </button>
+        </div>
+        <div className="flex flex-col items-center space-y-4 text-lg font-semibold text-white">
+          {["home", "rules", "about", "timeline", "prizes", "contact"].map(
+            (section) => (
+              <NavLink
+                key={section}
+                to={`/#${section}`}
+                activeLink={activeLink}
+                onClick={() => handleLinkClick(`/#${section}`)}
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </NavLink>
+            )
+          )}
+          <Link
+            to="/register"
+            onClick={toggleMenu}
+            className="w-full bg-gradient-to-r from-sky-500 to-sky-700 text-white rounded-full px-6 py-3 text-center shadow-lg hover:from-white hover:to-sky-400 hover:text-blue-600 transition duration-300"
+          >
+            Register
+          </Link>
+        </div>
+      </div>
     </nav>
   );
 };
 
-// NavLink Component for Consistency
+// NavLink Component
 const NavLink = ({ to, children, activeLink, onClick }) => {
   const navigate = useNavigate();
 
   const handleClick = (e) => {
     if (to.startsWith("/#")) {
       e.preventDefault();
-      const sectionId = to.replace("/#", ""); // Remove "/#" to get the ID
-      navigate("/"); // Navigate to the home page first
+      const sectionId = to.replace("/#", "");
+      navigate("/");
       setTimeout(() => {
         const section = document.getElementById(sectionId);
         if (section) {
           section.scrollIntoView({ behavior: "smooth" });
         }
-      }, 100); // Delay scrolling slightly after navigation
+      }, 100);
     } else {
       navigate(to);
     }
@@ -187,7 +138,7 @@ const NavLink = ({ to, children, activeLink, onClick }) => {
     <Link
       to={to}
       onClick={handleClick}
-      className={`w-full px-4 py-2 text-xl font-medium text-white rounded-full hover:text-[#23C4FF] ${
+      className={`w-full px-4 py-2 text-xl font-medium text-white rounded-full transition duration-200 hover:text-[#23C4FF] ${
         activeLink === to ? "text-[#23C4FF]" : ""
       }`}
     >
