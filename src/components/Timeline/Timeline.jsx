@@ -18,7 +18,7 @@ export default function Timeline() {
         {/* Row Content */}
         <div className="flex flex-row justify-between items-center w-full z-10">
           {/* Date on the left */}
-          <div className="w-1/3 flex justify-end pr-4">
+          <div className="w-1/3 flex justify-end">
             <p className="font-transrobotics justify-center items-center px-5 md:px-10 flex text-center md:text-start text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
               2024 June 12
             </p>
@@ -43,16 +43,16 @@ export default function Timeline() {
           </div>
 
           {/* Registration box on the right */}
-          <div className="w-1/3 flex justify-start pl-4">
-            <div className="bg-gradient-to-b from-[#0D1B2A] to-[#1B263B] text-white rounded-lg p-6 max-w-md shadow-lg">
-              <h2 className="text-xl font-bold mb-2 font-transrobotics md:text-start text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 ">
+          <div className="w-1/3 flex justify-start">
+            <div className="bg-gradient-to-b from-[#0D1B2A] to-[#1B263B] text-white rounded-lg p-2 md:p-6 max-w-md shadow-lg">
+              <h2 className="text-sm md:text-lg font-bold mb-2 font-transrobotics md:text-start text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 ">
                 REGISTRATION OFFICIALLY OPEN
               </h2>
-              <p className="text-sm mb-4 font-poppins">
+              <p className="text-xs md:text-sm mb-3 font-poppins">
                 Registrations for UOK ROBOT BATTLE 2025 officially open on the
                 2025 June 12
               </p>
-              <button className="bg-blue-500 font-poppins font-bold text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+              <button className="bg-blue-500 font-poppins font-bold text-white text-sm px-3 py-2 rounded hover:bg-blue-600 transition">
                 Register
               </button>
             </div>
