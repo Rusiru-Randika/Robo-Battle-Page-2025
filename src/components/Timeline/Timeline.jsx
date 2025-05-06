@@ -8,7 +8,7 @@ const events = [
       "Registrations for UOK ROBOT BATTLE 2025 open on the 10th of May.",
     button: "Register",
     buttonColor: "bg-blue-500 hover:bg-blue-600",
-    image: "/Timeline/Daco_438112.png", // Updated image path
+    image: "/Timeline/Icon1.png", // Updated image path
   },
   {
     date: "2025 August 05",
@@ -17,7 +17,7 @@ const events = [
       "Registrations for UOK ROBOT BATTLE 2025 close on the 5th of August.",
     button: "Register Now Before Closing",
     buttonColor: "bg-red-500 hover:bg-red-600",
-    image: "/Timeline/Daco_438112.png",
+    image: "/Timeline/Icon2.png",
   },
   {
     date: "2025 August 10",
@@ -26,7 +26,7 @@ const events = [
       "A workshop will be held on the 10th of August to prepare participants.",
     button: "Learn More",
     buttonColor: "bg-green-500 hover:bg-green-600",
-    image: "/Timeline/Daco_438112.png",
+    image: "/Timeline/Icon3.png",
   },
   {
     date: "2025 August 30",
@@ -35,7 +35,7 @@ const events = [
       "An awareness session will be conducted on the 30th of August.",
     button: "Join Session",
     buttonColor: "bg-yellow-500 hover:bg-yellow-600 text-black",
-    image: "/Timeline/Daco_438112.png",
+    image: "/Timeline/Icon4.png",
   },
   {
     date: "2025 September 05",
@@ -44,7 +44,7 @@ const events = [
       "The final Robot Battle will take place on the 5th of September.",
     button: "View Details",
     buttonColor: "bg-purple-500 hover:bg-purple-600",
-    image: "/Timeline/Daco_438112.png",
+    image: "/Timeline/Icon5.png",
   },
 ];
 

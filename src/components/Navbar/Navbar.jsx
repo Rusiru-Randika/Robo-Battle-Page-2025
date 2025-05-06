@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
-import logo from "../../../public/Branding/logo.svg"; // Adjust the path to your logo
+import logo from "../../../public/Branding/logo.svg"; // Adjust path as needed
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
-    setIsOpen(false); // Close menu on mobile when a link is clicked
+    setIsOpen(false);
   };
 
   return (
@@ -25,7 +25,7 @@ const Navbar = () => {
             <img src={logo} alt="Logo" className="w-12 h-12" />
           </div>
 
-          {/* Nav Links - Desktop */}
+          {/* Desktop Nav Links */}
           <div className="hidden center sm:flex sm:items-center sm:ml-6 sm:space-x-4">
             {["home", "rules", "about", "timeline", "prizes", "contact"].map(
               (section) => (
@@ -67,17 +67,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Backdrop Blur */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-lg z-40"
-          onClick={toggleMenu}
-        />
-      )}
-
-      {/* Sidebar - Mobile */}
+      {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 right-0 z-50 w-full h-full p-6 bg-black transform transition-transform duration-300 shadow-lg ${
+        className={`fixed inset-0 z-50 w-full h-full p-6 bg-black transform transition-transform duration-300 shadow-lg ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } sm:hidden`}
       >
