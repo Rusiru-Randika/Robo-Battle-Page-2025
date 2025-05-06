@@ -12,7 +12,7 @@ const WinningPrizes = () => {
       <div className="font-transrobotics flex flex-col justify-center items-center gap-2 md:gap-8 mt-10 md:flex-row md:items-center md:justify-center lg:justify-center md:content-center">
         <LargeCard>
           <span className="text-white">
-            Light Weight<br></br>Category
+            Light Weight<br></br>Category (Open)
           </span>
         </LargeCard>
         <LargeCard>
