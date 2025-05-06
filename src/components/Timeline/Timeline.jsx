@@ -93,7 +93,7 @@ export default function Timeline() {
             {index % 2 === 0 ? (
               <>
                 <div className="w-1/3 md:w-2/5 flex justify-end animate-on-scroll">
-                  <p className="font-transrobotics text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 text-lg md:text-xl">
+                  <p className="font-transrobotics text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 text-lg md:text-2xl">
                     {event.date}
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export default function Timeline() {
                 </div>
                 <TimelineNode src={event.image} />
                 <div className="w-1/3 md:w-2/5 flex justify-start animate-on-scroll">
-                  <p className="font-transrobotics text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 text-lg md:text-xl">
+                  <p className="font-transrobotics text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 text-lg md:text-2xl">
                     {event.date}
                   </p>
                 </div>
@@ -189,14 +189,14 @@ function TimelineCard({ event }) {
 
   return (
     <div className="bg-gradient-to-b from-[#0D1B2A] to-[#1B263B] text-white rounded-lg p-3.5 md:p-6 max-w-md shadow-lg">
-      <h2 className="text-sm md:text-lg font-bold mb-2 font-transrobotics text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
+      <h2 className="text-sm md:text-xl font-bold mb-2 font-transrobotics text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
         {event.title}
       </h2>
-      <p className="text-xs md:text-sm mb-3 font-poppins">
+      <p className="text-xs md:text-base mb-3 font-poppins">
         {event.description}
       </p>
       {event.title === "Registration closing" && (
-        <p className="text-xs md:text-sm mb-3 font-poppins text-red-400">
+        <p className="text-xs md:text-base mb-3 font-poppins text-red-400">
           Registration closing in : {countdown}
         </p>
       )}
