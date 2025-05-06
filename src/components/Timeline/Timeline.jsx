@@ -45,7 +45,7 @@ const events = [
 
 export default function Timeline() {
   return (
-    <div className="pt-10 md:pt-20 relative min-h-screen bg-[#020230]">
+    <div className="pt-10 md:pt-20 pb-10 relative min-h-screen bg-[#020230]">
       {/* Heading */}
       <h1 className="font-transrobotics text-2xl md:text-4xl justify-center items-center px-5 md:px-10 flex text-center md:text-start text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
         Timeline
@@ -53,45 +53,54 @@ export default function Timeline() {
 
       {/* Timeline Container */}
       <div className="relative flex flex-col items-center mt-10 px-5 md:px-10">
-        {/* Vertical Line */}
-        <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-[4px] bg-white z-0" />
+        {/* Vertical Line with Start & End Caps */}
+        <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-1/2 w-[4px] z-0">
+          {/* Top Cap */}
+          <TimelineCap />
 
+          {/* Main Line */}
+          <div className="h-full bg-white w-[4px] mx-auto" />
+
+          {/* Bottom Cap */}
+          <TimelineCap />
+        </div>
+
+        {/* Event Rows */}
         {events.map((event, index) => (
           <div
             key={index}
             className="flex flex-row justify-between items-center w-full z-10 my-10"
           >
-            {/* Left side content */}
             {index % 2 === 0 ? (
               <>
-                {/* Date */}
+                {/* Left Date */}
                 <div className="w-1/3 flex justify-end">
-                  <p className="font-transrobotics text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 text-sm md:text-base">
+                  <p className="font-transrobotics text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 text-lg md:text-xl">
                     {event.date}
                   </p>
                 </div>
 
-                {/* Node */}
+                {/* Center Node */}
                 <TimelineNode />
 
-                {/* Box */}
+                {/* Right Card */}
                 <div className="w-1/3 flex justify-start">
                   <TimelineCard event={event} />
                 </div>
               </>
             ) : (
               <>
-                {/* Box */}
+                {/* Left Card */}
                 <div className="w-1/3 flex justify-end">
                   <TimelineCard event={event} />
                 </div>
 
-                {/* Node */}
+                {/* Center Node */}
                 <TimelineNode />
 
-                {/* Date */}
+                {/* Right Date */}
                 <div className="w-1/3 flex justify-start">
-                  <p className="font-transrobotics text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 text-sm md:text-base">
+                  <p className="font-transrobotics text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 text-lg md:text-xl">
                     {event.date}
                   </p>
                 </div>
@@ -101,6 +110,13 @@ export default function Timeline() {
         ))}
       </div>
     </div>
+  );
+}
+
+// Diamond Shape at Start & End
+function TimelineCap() {
+  return (
+    <div className="w-4 h-4 bg-white rounded-full absolute left-1/2 -translate-x-1/2" />
   );
 }
 
