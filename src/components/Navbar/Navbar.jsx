@@ -26,6 +26,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Nav Links */}
+          {/* Visible only on screens larger than the 'sm' breakpoint (640px) */}
           <div className="hidden center sm:flex sm:items-center sm:ml-6 sm:space-x-4">
             {["home", "rules", "about", "timeline", "prizes", "contact"].map(
               (section) => (
@@ -52,6 +53,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
+          {/* Visible only on screens smaller than the 'sm' breakpoint (640px) */}
           <div className="sm:hidden">
             <button
               className="p-2 text-white rounded-md hover:text-blue-400 focus:outline-none"
@@ -68,18 +70,19 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Sidebar */}
+      {/* Visible only on screens smaller than the 'sm' breakpoint (640px) */}
       <div
-        className={`fixed inset-0 z-50 w-full h-full p-6 bg-black transform transition-transform duration-300 shadow-lg ${
+        className={`fixed inset-0 z-50 w-full min-h-screen pt-6 bg-[#020230] transform transition-transform duration-300 shadow-lg ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } sm:hidden`}
       >
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between px-6">
           <img src={logo} alt="Logo" className="w-10 h-10" />
           <button onClick={toggleMenu}>
             <FiX className="w-8 h-8 text-white" />
           </button>
         </div>
-        <div className="flex flex-col items-center space-y-4 text-lg font-semibold text-white">
+        <div className="flex flex-col items-center p-6 space-y-4 text-lg font-semibold text-white">
           {["home", "rules", "about", "timeline", "prizes", "contact"].map(
             (section) => (
               <NavLink
