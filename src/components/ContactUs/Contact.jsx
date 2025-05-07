@@ -6,7 +6,7 @@ import "swiper/css/autoplay";
 
 // Import images
 import Person1 from "../../../public/People/Person1.png";
-import Person2 from "../../../public/People/Person2.png";
+//import Person2 from "../../../public/People/Person2.png";
 
 const teamMembers = [
   {
@@ -35,7 +35,7 @@ const teamMembers = [
     name: "Kavindu Pabasara",
     phone: "+94 71 866 9299",
     email: "bandara-ec21031@stu.kln.ac.lk",
-    photo: Person2,
+    photo: Person1,
   },
   {
     role: "ER Coordinator",
