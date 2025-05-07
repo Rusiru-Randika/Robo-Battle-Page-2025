@@ -30,7 +30,7 @@ const Home = () => {
               />
               <Button
                 text={"Register"}
-                url={"/Register"}
+                url={"https://forms.google.com/your-form-url"} // Replace with your actual Google Form URL
                 className="font-transrobotics bg-gradient-to-r from-sky-500 to-sky-700 text-white rounded-[54px] px-6 py-3 hover:bg-gradient-to-r hover:from-white hover:to-sky-400 hover:text-blue-600 border-none"
               />
             </div>

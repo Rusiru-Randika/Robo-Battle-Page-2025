@@ -49,12 +49,14 @@ const Navbar = () => {
 
           {/* Register Button */}
           <div className="relative right-0 flex items-center">
-            <Link
-              to="/register"
+            <a
+              href="https://forms.google.com/your-form-url" // Replace with your actual Google Form URL
               className="bg-gradient-to-r text-white from-sky-500 to-sky-700 rounded-[54px] px-4 py-2 hover:bg-gradient-to-r hover:from-white hover:to-sky-400 hover:text-blue-600"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <div className="text-center text-xl font-normal">Register</div>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -108,13 +110,15 @@ const Navbar = () => {
               </NavLink>
             )
           )}
-          <Link
-            to="/register"
+          <a
+            href="https://forms.google.com/your-form-url" // Replace with your actual Google Form URL
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={toggleMenu}
             className="w-full bg-gradient-to-r from-sky-500 to-sky-700 text-white rounded-full px-6 py-3 text-center shadow-lg hover:from-white hover:to-sky-400 hover:text-blue-600 transition duration-300"
           >
             Register
-          </Link>
+          </a>
         </div>
       </div>
     </nav>

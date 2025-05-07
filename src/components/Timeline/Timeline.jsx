@@ -202,7 +202,7 @@ function TimelineCard({ event }) {
       )}
       <button
         className={`${event.buttonColor} font-poppins font-bold text-white text-sm px-3 py-2 rounded transition`}
-        onClick={() => (window.location.href = "/Register")}
+        onClick={() => window.open("https://forms.google.com/your-form-url", "_blank")} // Replace with your actual Google Form URL
       >
         {event.button}
       </button>
