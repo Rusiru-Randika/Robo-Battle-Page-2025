@@ -7,16 +7,16 @@ const Home = () => {
     <div className="flex flex-col justify-center items-center px-10 text-center mt-20 mb-5">
       <div className="flex flex-col md:flex-row justify-center items-center w-full">
         <div className="w-full md:w-1/2 text-white flex flex-col justify-center items-center md:items-start text-center md:text-left gap-2 md:gap-5 md:px-20">
-          <h2 className="font-transrobotics text-xl md:text-3xl opacity-90">
+          <h2 className="font-transrobotics scroll-animate text-xl md:text-3xl opacity-90">
             UOK
           </h2>
-          <h1 className="font-transrobotics text-5xl md:text-7xl mt-2 md:mt-0 bg-gradient-to-b from-[#FFFFFF] to-[#999999] bg-clip-text text-transparent">
+          <h1 className="font-transrobotics text-5xl scroll-animate md:text-7xl mt-2 md:mt-0 bg-gradient-to-b from-[#FFFFFF] to-[#999999] bg-clip-text text-transparent">
             ROBOT <br /> BATTLES
           </h1>
-          <h2 className="font-transrobotics text-xl md:text-3xl opacity-90">
+          <h2 className="font-transrobotics scroll-animate text-xl md:text-3xl opacity-90">
             2025
           </h2>
-          <div className="flex flex-col items-center font-bebasneue mt-5">
+          <div className="flex flex-col items-center font-bebasneue mt-5 animate-fade-in">
             <p className="text-white text-lg md:text-xl leading-normal opacity-80 max-w-2xl">
               Experience the thrill of high-stakes competition, where every
               strategy is a calculated risk, and every engineering feat is a
@@ -36,7 +36,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-1/2 flex justify-center items-center mt-5 md:mt-0">
+        <div className="w-full md:w-1/2 flex justify-center scroll-animate items-center mt-5 md:mt-0">
           <img src={homeLogo} alt="Home Logo" className="mx-auto" width="550" />
         </div>
       </div>

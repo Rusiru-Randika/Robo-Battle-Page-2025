@@ -56,14 +56,14 @@ export default function Timeline() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate-visible");
+            entry.target.classList.add("visible");
           }
         });
       },
       { threshold: 0.1 }
     );
 
-    const elements = timelineRef.current.querySelectorAll(".animate-on-scroll");
+    const elements = timelineRef.current.querySelectorAll(".scroll-trigger");
     elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
@@ -74,7 +74,7 @@ export default function Timeline() {
       ref={timelineRef}
       className="pt-10 md:pt-20 pb-10 relative min-h-screen bg-[#020230]"
     >
-      <h1 className="font-transrobotics text-2xl md:text-4xl justify-center items-center px-5 md:px-10 flex text-center md:text-start text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
+      <h1 className="font-transrobotics text-2xl md:text-4xl justify-center items-center px-5 md:px-10 flex text-center md:text-start text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 scroll-trigger">
         Timeline
       </h1>
 
@@ -88,27 +88,27 @@ export default function Timeline() {
         {events.map((event, index) => (
           <div
             key={index}
-            className="flex flex-row justify-between items-center w-full z-10 my-10"
+            className="flex flex-row justify-between items-center w-full z-10 my-10 scroll-trigger"
           >
             {index % 2 === 0 ? (
               <>
-                <div className="w-1/3 md:w-2/5 flex justify-end animate-on-scroll">
+                <div className="w-1/3 md:w-2/5 flex justify-end scroll-trigger">
                   <p className="font-transrobotics text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 text-lg md:text-2xl">
                     {event.date}
                   </p>
                 </div>
                 <TimelineNode src={event.image} />
-                <div className="w-1/3 md:w-2/5 flex justify-start animate-on-scroll">
+                <div className="w-1/3 md:w-2/5 flex justify-start scroll-trigger">
                   <TimelineCard event={event} />
                 </div>
               </>
             ) : (
               <>
-                <div className="w-1/3 md:w-2/5 flex justify-end animate-on-scroll">
+                <div className="w-1/3 md:w-2/5 flex justify-end scroll-trigger">
                   <TimelineCard event={event} />
                 </div>
                 <TimelineNode src={event.image} />
-                <div className="w-1/3 md:w-2/5 flex justify-start animate-on-scroll">
+                <div className="w-1/3 md:w-2/5 flex justify-start scroll-trigger">
                   <p className="font-transrobotics text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 text-lg md:text-2xl">
                     {event.date}
                   </p>
@@ -202,7 +202,9 @@ function TimelineCard({ event }) {
       )}
       <button
         className={`${event.buttonColor} font-poppins font-bold text-white text-sm px-3 py-2 rounded transition`}
-        onClick={() => window.open("https://forms.google.com/your-form-url", "_blank")} // Replace with your actual Google Form URL
+        onClick={() =>
+          window.open("https://forms.google.com/your-form-url", "_blank")
+        } // Replace with your actual Google Form URL
       >
         {event.button}
       </button>

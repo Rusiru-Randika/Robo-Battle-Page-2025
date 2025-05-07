@@ -1,9 +1,35 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function About() {
+  const textBoxRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (textBoxRef.current) {
+      observer.observe(textBoxRef.current);
+    }
+
+    return () => {
+      if (textBoxRef.current) {
+        observer.unobserve(textBoxRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="py-20 px-10 text-white">
-      <div className="max-w-4xl mx-auto bg-[#1A1F39] rounded-3xl p-10 shadow-lg">
+      <div
+        ref={textBoxRef}
+        className="max-w-4xl mx-auto bg-[#1A1F39] rounded-3xl p-10 shadow-lg scroll-trigger"
+      >
         <h1 className="font-transrobotics text-4xl md:text-5xl text-center text-transparent bg-clip-text bg-gradient-to-b from-[#6EE7B7] to-[#3B82F6] mb-8">
           What is UOK Robot Battle?
         </h1>

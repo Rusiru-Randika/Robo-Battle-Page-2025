@@ -35,7 +35,7 @@ function Footer() {
           href="/#timeline"
           className="text-white text-base md:text-lg hover:text-blue-400 flex-1 text-center"
         >
-          Time Line
+          Timeline
         </a>
         <a
           href="/#contact"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -20,9 +20,35 @@ const topImages = [image1, image2, image3, image4, image5];
 const bottomImages = [image6, image7, image8, image9, image10];
 
 const Gallery = () => {
+  const headingRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (headingRef.current) {
+      observer.observe(headingRef.current);
+    }
+
+    return () => {
+      if (headingRef.current) {
+        observer.unobserve(headingRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="bg-[#05074f] min-h-screen py-10">
-      <h1 className="text-center text-4xl font-bold font-transrobotics px-10 text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
+      <h1
+        ref={headingRef}
+        className="text-center text-4xl font-bold font-transrobotics scroll-trigger px-10 text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]"
+      >
         YEAR 2024
       </h1>
 
