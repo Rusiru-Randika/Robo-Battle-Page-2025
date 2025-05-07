@@ -54,22 +54,22 @@ const teamMembers = [
 ];
 
 const TeamCard = ({ member, index }) => (
-  <div className="mt-40 text-white py-6 flex flex-col md:flex-row items-center md:items-start gap-8 font-bebasneue">
+  <div className="pt-40 text-white flex flex-col md:flex-row md:justify-center font-bebasneue">
     {/* Image and Background */}
-    <div className="static min-w-[250px] min-h-[300px]">
+    <div className="relative md:min-w-[250px] min-h-[300px] flex items-center justify-center  md:block w-screen md:w-auto">
       {/* Background shape */}
-      <div className="absolute  md:left-0   -translate-y-[20px] w-[146.29px] h-[263.62px] z-10 bg-gradient-to-b from-[#D9D9D9] via-[#62B8EE] to-[#009DFF] rounded-[48px_0px]"></div>
+      <div className="absolute left-0 -translate-y-[20px] -translate-x-[-90px] md:translate-x-0 w-[146.29px] h-[269.62px] z-10 bg-gradient-to-b from-[#D9D9D9] via-[#62B8EE] to-[#009DFF] rounded-[48px_0px]"></div>
 
       {/* Member Photo */}
       <img
         src={member.photo}
         alt={member.name}
-        className="absolute md:left-0 w-80 z-20 -translate-y-[70px] -translate-x-[30px]"
+        className="absolute md:left-0 min-w-80 h-80 z-20 -translate-y-[45px] -translate-x-[-10px] md:-translate-x-[30px] md:-translate-y-[70px]" 
       />
     </div>
 
     {/* Content */}
-    <div className="flex flex-col justify-center md:items-start items-center gap-6 pl-0  max-w-[90vw]">
+    <div className="flex flex-col  md:items-start items-center gap-6  max-w-[90vw] min-w-[235px]">
       {/* Position Badge */}
       <div className="flex justify-center items-center w-[161px] h-[30px] bg-[#0066FF] rounded-[32px_0px]">
         <h3 className="font-bold">{member.role}</h3>
@@ -120,15 +120,13 @@ const TeamCard = ({ member, index }) => (
 );
 
 const Team = () => (
-  <div className="md:mb-12 md:mt-[-50px] py-20 px-4 md:px-10">
-    {" "}
-    {/* Added px-4 for mobile and md:px-10 for larger screens */}
-    <h1 className="py-10 font-transrobotics text-3xl md:text-4xl justify-center items-center content-center px-10 flex text-center md:text-start text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
+  <div className="md:mb-12 md:mt-[50px] py-20 px-4 md:px-10 flex flex-col items-center justify-center ">
+    <h1 className="py-10 font-transrobotics text-3xl md:text-4xl  content-center px-10 flex md:text-start text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999]">
       CONTACT US
     </h1>
     <Swiper
-      className="overflow-visible"
-      spaceBetween={100}
+      className="w-full mx-auto"
+      spaceBetween={75}
       slidesPerView={1}
       breakpoints={{
         0: { slidesPerView: 1 },
@@ -136,7 +134,7 @@ const Team = () => (
       }}
       loop={true} // Enable continuous looping
       autoplay={{
-        delay: 100000, // No delay between slides
+        delay: 5000, // No delay between slides
         disableOnInteraction: false, // Keep autoplay active even after interaction
         pauseOnMouseEnter: false, // Prevent pausing on mouse hover
       }}
@@ -146,7 +144,9 @@ const Team = () => (
     >
       {teamMembers.map((member, index) => (
         <SwiperSlide key={`${member.name}-${index}`}>
-          <TeamCard member={member} index={index} />
+          <div className="">
+            <TeamCard member={member} index={index} />
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>

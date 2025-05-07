@@ -9,7 +9,6 @@ import WinningPrizes from "./components/WinningPrizes/WinningPrizes";
 import Sponsors from "./components/Sponsorship/Sponsors";
 import Team from "./components/ContactUs/Contact";
 import Footer from "./components/Footer/Footer";
-import RegisterForm from "./components/RegisterForm/RegisterForm";
 
 const App = () => {
   return (
@@ -42,7 +41,8 @@ const App = () => {
               </div>
             }
           />
-          <Route path="/register" element={<RegisterForm />} />
+          {/* the register is now in a google form so the route is not needed */}
+          {/* <Route path="/register" element={<RegisterForm />} /> */}
         </Routes>
       </div>
     </Router>
