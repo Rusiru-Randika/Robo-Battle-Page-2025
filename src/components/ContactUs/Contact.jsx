@@ -5,8 +5,8 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 // Import images
-import person1 from "../../../public/People/Person1.png";
-import person2 from "../../../public/People/Person2.png";
+import Person1 from "../../../public/People/Person1.png";
+import Person2 from "../../../public/People/Person2.png";
 
 const teamMembers = [
   {
@@ -14,42 +14,42 @@ const teamMembers = [
     name: "Dr Kasun Piyumal",
     phone: "", // Removed phone number
     email: "Kasunp@kln.ac.lk",
-    photo: person1,
+    photo: Person1,
   },
   {
     role: "Project Manager",
     name: "Supun Tharaka",
     phone: "+94 77 109 2426",
     email: "tharaka-ec21028@stu.kln.ac.lk",
-    photo: person1,
+    photo: Person1,
   },
   {
     role: "Project Manager",
     name: "Maneesha Gunarathna",
     phone: "+94 77 109 2426",
     email: "gunarat-ec21026@stu.kln.ac.lk",
-    photo: person1,
+    photo: Person1,
   },
   {
     role: "Project Manager",
     name: "Kavindu Pabasara",
     phone: "+94 71 866 9299",
     email: "bandara-ec21031@stu.kln.ac.lk",
-    photo: person2,
+    photo: Person2,
   },
   {
     role: "ER Coordinator",
     name: "D.R.R.C.Dasanayake",
     phone: "+94 70 494 9802",
     email: "dasanay-ec21074@stu.kln.ac.lk",
-    photo: person1,
+    photo: Person1,
   },
   {
     role: "ER Coordinator",
     name: "A.P.V.P Rajarathne ",
     phone: "+94 71 076 9883",
     email: "rajarat-ec21009@stu.kln.ac.lk ",
-    photo: person1,
+    photo: Person1,
   },
 ];
 
