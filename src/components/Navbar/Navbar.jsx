@@ -33,7 +33,7 @@ const Navbar = () => {
           {/* Desktop Nav Links */}
           {/* Visible only on screens larger than the 'sm' breakpoint (640px) */}
           <div className="hidden center sm:flex sm:items-center sm:ml-6 sm:space-x-4">
-            {["home", "rules", "about", "timeline", "prizes", "contact"].map(
+            {["home", "about", "rules", "timeline", "prizes", "contact"].map(
               (section) => (
                 <NavLink
                   key={section}
@@ -98,7 +98,7 @@ const Navbar = () => {
           </button>
         </div>
         <div className="flex flex-col items-center p-6 space-y-4 text-lg font-semibold text-white">
-          {["home", "rules", "about", "timeline", "prizes", "contact"].map(
+          {["home", "about", "rules", "timeline", "prizes", "contact"].map(
             (section) => (
               <NavLink
                 key={section}

@@ -10,6 +10,7 @@ import Sponsors from "./components/Sponsorship/Sponsors";
 import Team from "./components/ContactUs/Contact";
 import Footer from "./components/Footer/Footer";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen"; // Import LoadingScreen
+import Rules from "./components/Rules/Rules";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -40,8 +41,11 @@ const App = () => {
                   <About />
                 </section>
                 <Gallery />
-                <section className="" id="timeline">
-                  <Timeline />
+                <section id="rules" className="pt-10">
+                  <Rules />
+                  <section className="" id="timeline">
+                    <Timeline />
+                  </section>
                 </section>
                 <section id="prizes" className="pt-10">
                   <WinningPrizes />
