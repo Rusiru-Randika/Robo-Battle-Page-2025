@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
@@ -14,12 +14,14 @@ import LoadingScreen from "./components/LoadingScreen/LoadingScreen"; // Import 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  const handleHomeLoad = () => {
-    setIsLoading(false); // Hide the loading screen once the Home section is loaded
-  };
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1000); // Simulate a 1-second delay
+
+    return () => clearTimeout(timer); // Cleanup the timer
+  }, []);
 
   if (isLoading) {
-    return <LoadingScreen />; // Render the loading screen until the Home section is loaded
+    return <LoadingScreen />;
   }
 
   return (
@@ -32,7 +34,7 @@ const App = () => {
             element={
               <div>
                 <section id="home" className="pt-5">
-                  <Home onLoad={handleHomeLoad} /> {/* Pass onLoad handler */}
+                  <Home />
                 </section>
                 <section id="about" className="pt-10">
                   <About />

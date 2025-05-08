@@ -1,17 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Button from "../Button/Button";
 import homeLogo from "/public/Branding/Home-Logo.svg";
 
-const Home = ({ onLoad }) => {
-  useEffect(() => {
-    // Simulate loading completion for the Home section
-    const timer = setTimeout(() => {
-      if (onLoad) onLoad(); // Trigger the onLoad callback
-    }, 500); // Adjust delay as needed
-
-    return () => clearTimeout(timer); // Cleanup the timer
-  }, [onLoad]);
-
+const Home = () => {
   return (
     <div className="flex flex-col justify-center items-center px-10 text-center mt-20 mb-5">
       <div className="flex flex-col md:flex-row justify-center items-center w-full">
