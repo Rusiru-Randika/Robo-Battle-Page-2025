@@ -46,6 +46,15 @@
   }
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .animate-fade-in {
   animation: fade-in 1s ease-out;
 }
@@ -56,6 +65,10 @@
 
 .animate-slide-in-left {
   animation: slide-in-left 1s ease-out;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
 
 .scroll-trigger {
