@@ -15,9 +15,9 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1000); // Simulate a 1-second delay
-
-    return () => clearTimeout(timer); // Cleanup the timer
+    // Simulate a loading delay
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
