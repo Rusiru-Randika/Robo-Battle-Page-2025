@@ -4,7 +4,6 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 
-// Sample images (Replace with actual paths)
 import image1 from "../../../public/Gallery/1.jpg";
 import image2 from "../../../public/Gallery/2.jpg";
 import image3 from "../../../public/Gallery/3.jpg";
@@ -57,6 +56,11 @@ const Gallery = () => {
         <Swiper
           spaceBetween={20}
           slidesPerView={3}
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
           loop={true}
           autoplay={{
             delay: 0,
@@ -64,7 +68,6 @@ const Gallery = () => {
             pauseOnMouseEnter: false,
           }}
           speed={2800}
-          freeMode={true}
           modules={[Autoplay]}
           className="rounded-lg"
         >
@@ -87,6 +90,11 @@ const Gallery = () => {
         <Swiper
           spaceBetween={20}
           slidesPerView={3}
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
           loop={true}
           autoplay={{
             delay: 5,
@@ -94,7 +102,6 @@ const Gallery = () => {
             pauseOnMouseEnter: false,
           }}
           speed={3000}
-          freeMode={true}
           modules={[Autoplay]}
           className="rounded-lg"
         >

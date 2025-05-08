@@ -27,7 +27,7 @@ const App = () => {
                   <About />
                 </section>
                 <Gallery />
-                <section className="pt-10" id="timeline">
+                <section className="" id="timeline">
                   <Timeline />
                 </section>
                 <section id="prizes" className="pt-10">
