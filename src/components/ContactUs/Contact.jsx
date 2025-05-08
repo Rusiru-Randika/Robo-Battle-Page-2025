@@ -54,11 +54,11 @@ const teamMembers = [
 ];
 
 const TeamCard = ({ member, index }) => (
-  <div className="pt-40 text-white flex flex-col md:flex-row md:justify-center font-bebasneue">
+  <div className="pt-40 text-white flex flex-col lg:flex-row md:justify-center font-bebasneue">
     {/* Image and Background */}
     <div className="relative md:min-w-[250px] min-h-[300px] flex items-center justify-center  md:block w-screen md:w-auto">
       {/* Background shape */}
-      <div className="absolute left-0 -translate-y-[20px] -translate-x-[-90px] md:translate-x-0 w-[146.29px] h-[269.62px] z-10 bg-gradient-to-b from-[#D9D9D9] via-[#62B8EE] to-[#009DFF] rounded-[48px_0px]"></div>
+      <div className="absolute md:left-0 -translate-y-[20px] -translate-x-[45px] md:translate-x-0 w-[146.29px] h-[269.62px] z-10 bg-gradient-to-b from-[#D9D9D9] via-[#62B8EE] to-[#009DFF] rounded-[48px_0px]"></div>
 
       {/* Member Photo */}
       <img
