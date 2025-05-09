@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -58,7 +58,7 @@ const teamMembers = [
 ];
 
 const TeamCard = ({ member, index }) => (
-  <div className="text-white flex flex-col items-center font-bebasneue bg-gradient-to-b from-[#0A0F29] to-[#0A0F29] rounded-lg shadow-lg p-4 scroll-animate hover:scale-105 transition-transform duration-300">
+  <div className="text-white flex flex-col items-center font-bebasneue bg-gradient-to-b from-[#0A0F29] to-[#0A0F29] rounded-lg shadow-lg p-4 scroll-trigger hover:scale-105 transition-transform duration-300">
     {/* Member Photo */}
     <div className="relative w-32 h-32 flex items-center justify-center">
       <img
@@ -121,21 +121,47 @@ const TeamCard = ({ member, index }) => (
   </div>
 );
 
-const Team = () => (
-  <div className="md:mb-12 md:mt-[50px] py-5 px-4 md:px-10 flex flex-col items-center justify-center">
-    <h1 className="py-10 font-transrobotics text-3xl md:text-4xl content-center px-10 flex md:text-start text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999] scroll-animate hover:scale-105 transition-transform duration-300">
-      CONTACT US
-    </h1>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-      {teamMembers.map((member, index) => (
-        <TeamCard
-          key={`${member.name}-${index}`}
-          member={member}
-          index={index}
-        />
-      ))}
+const Team = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // Stop observing once visible
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = containerRef.current.querySelectorAll(".scroll-trigger");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      className="md:mb-12 md:mt-[50px] py-5 px-4 md:px-10 flex flex-col items-center justify-center"
+    >
+      <h1 className="py-10 font-transrobotics text-3xl md:text-4xl content-center px-10 flex md:text-start text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999] scroll-trigger">
+        CONTACT US
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {teamMembers.map((member, index) => (
+          <TeamCard
+            key={`${member.name}-${index}`}
+            member={member}
+            index={index}
+          />
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Team;

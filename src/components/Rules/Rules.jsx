@@ -1,13 +1,36 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 const Rules = () => {
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // Stop observing once visible
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = containerRef.current.querySelectorAll(".scroll-trigger");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="py-16 px-6 text-white">
-      <div className="max-w-4xl mx-auto bg-[#1A1F39] rounded-3xl p-8 shadow-lg">
-        <h1 className="font-transrobotics text-4xl md:text-5xl text-center text-transparent bg-clip-text bg-gradient-to-b from-[#6EE7B7] to-[#3B82F6] mb-6">
+    <div ref={containerRef} className="py-16 px-6 text-white">
+      <div className="max-w-4xl mx-auto bg-[#1A1F39] rounded-3xl p-8 shadow-lg scroll-trigger">
+        <h1 className="font-transrobotics text-4xl md:text-5xl text-center text-transparent bg-clip-text bg-gradient-to-b from-[#6EE7B7] to-[#3B82F6] mb-6 scroll-trigger">
           Rules and Regulations
         </h1>
-        <div className="font-poppins text-base md:text-lg leading-tight text-white space-y-4">
+        <div className="font-poppins text-base md:text-lg leading-tight text-white space-y-4 scroll-trigger">
           <h2 className="text-2xl font-bold">Team Requirements</h2>
           <ul className="list-disc list-inside ">
             <li>Each participant can only join one team.</li>
@@ -88,7 +111,7 @@ const Rules = () => {
           </ul>
         </div>
 
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-8 scroll-trigger">
           <button className="font-transrobotics text-xl px-6 py-3 bg-gradient-to-r from-[#6EE7B7] to-[#3B82F6] rounded-[54px] hover:from-[#3B82F6] hover:to-[#6EE7B7] transition-all duration-300">
             <a
               href="https://drive.google.com/file/d/1rTUN0DA0Xbr2zOjoA7ALjxlJ-97MV1mB/view?usp=sharing"
