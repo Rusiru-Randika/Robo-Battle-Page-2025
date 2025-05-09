@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import Button from "../Button/Button";
+import Popup from "../Popup/Popup";
 import homeLogo from "/public/Branding/Home-Logo.svg";
 
-const Home = () => {
+const Home = ({ registerButtonRef }) => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
+
+  const popupButtons = [
+    {
+      text: "Light Weight",
+      url: "/register/lightweight",
+      className:
+        "font-transrobotics bg-green-600 text-gray-200 rounded-[10px] px-6 py-3 hover:bg-green-700 transition-all duration-300 border-none",
+    },
+    {
+      text: "Heavy Weight",
+      url: "/register/heavyweight",
+      className:
+        "font-transrobotics bg-red-600 text-gray-200  rounded-[10px] px-6 py-3 hover:bg-red-700 transition-all duration-300 border-none",
+    },
+  ];
+
   return (
     <div className="flex flex-col justify-center items-center px-10 text-center mt-20 mb-5">
       <div className="flex flex-col md:flex-row justify-center items-center w-full">
@@ -28,11 +50,13 @@ const Home = () => {
                 url={"/Calender"}
                 className="font-transrobotics text-grey-100 bg-gradient-to-r from-white to-sky-100 hover:text-blue-600 rounded-[54px] px-6 py-3 hover:bg-gradient-to-r hover:from-white hover:text-blue-600 hover:to-sky-400 border-none"
               />
-              <Button
-                text={"Register"}
-                url={"https://forms.google.com/your-form-url"} // Replace with your actual Google Form URL
+              <button
+                ref={registerButtonRef}
+                onClick={togglePopup}
                 className="font-transrobotics bg-gradient-to-r from-sky-500 to-sky-700 text-white rounded-[54px] px-6 py-3 hover:bg-gradient-to-r hover:from-white hover:to-sky-400 hover:text-blue-600 border-none"
-              />
+              >
+                Register
+              </button>
             </div>
           </div>
         </div>
@@ -40,6 +64,12 @@ const Home = () => {
           <img src={homeLogo} alt="Home Logo" className="mx-auto" width="550" />
         </div>
       </div>
+      <Popup
+        isVisible={isPopupVisible}
+        togglePopup={togglePopup}
+        buttons={popupButtons}
+        containerClassName="px-4 sm:px-6 lg:px-8 max-w-lg w-full"
+      />
     </div>
   );
 };

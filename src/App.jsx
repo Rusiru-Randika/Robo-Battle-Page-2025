@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
@@ -14,6 +14,7 @@ import Rules from "./components/Rules/Rules";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const registerButtonRef = useRef(null);
 
   useEffect(() => {
     // Simulate a loading delay
@@ -28,14 +29,14 @@ const App = () => {
   return (
     <Router>
       <div className="min-h-screen relative overflow-hidden">
-        <Navbar />
+        <Navbar registerButtonRef={registerButtonRef} />
         <Routes>
           <Route
             path="/"
             element={
               <div>
                 <section id="home" className="pt-5">
-                  <Home />
+                  <Home registerButtonRef={registerButtonRef} />
                 </section>
                 <section id="about" className="pt-10">
                   <About />
@@ -50,7 +51,7 @@ const App = () => {
                 <section id="prizes" className="pt-10">
                   <WinningPrizes />
                 </section>
-                <Sponsors />
+                {/* <Sponsors /> */}
                 <section id="contact" className="pt-10">
                   <Team />
                 </section>

@@ -47,25 +47,43 @@ function Footer() {
 
       <div className="flex justify-center items-center gap-8 md:gap-16 lg:gap-24 py-8 bg-black">
         <div className="flex justify-center items-center">
-          <img
-            src={UniLogo}
-            alt="Logo 1"
-            className="h-16 md:h-20 lg:h-24 w-auto"
-          />
+          <a
+            href="https://www.kln.ac.lk/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={UniLogo}
+              alt="Logo 1"
+              className="h-16 md:h-20 lg:h-24 w-auto"
+            />
+          </a>
         </div>
         <div className="flex justify-center items-center">
-          <img
-            src={HomeLogo}
-            alt="Logo 2"
-            className="h-16 md:h-20 lg:h-24 w-auto"
-          />
+          <a
+            href="https://robotbattles.ecsc-uok.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={HomeLogo}
+              alt="Logo 2"
+              className="h-16 md:h-20 lg:h-24 w-auto"
+            />
+          </a>
         </div>
         <div className="flex justify-center items-center">
-          <img
-            src={ClubLogo}
-            alt="Logo 3"
-            className="h-16 md:h-20 lg:h-24 w-auto"
-          />
+          <a
+            href="https://ecsc-uok.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={ClubLogo}
+              alt="Logo 3"
+              className="h-16 md:h-20 lg:h-24 w-auto"
+            />
+          </a>
         </div>
       </div>
 
@@ -98,7 +116,7 @@ function Footer() {
 
       <div className="flex justify-center items-center gap-8 py-4 bg-black">
         <a
-          href="https://wa.me/yourphonenumber"
+          href="https://whatsapp.com/channel/0029Vb82ayPK5cDJwkQkw53u"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -130,7 +148,7 @@ function Footer() {
           </svg>
         </a>
         <a
-          href="https://www.instagram.com/your_instagram"
+          href="https://www.instagram.com/ecsc_uok/"
           target="_blank"
           rel="noopener noreferrer"
         >

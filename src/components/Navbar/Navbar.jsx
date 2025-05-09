@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import logo from "../../../public/Branding/logo.svg"; // Adjust path as needed
 
-const Navbar = () => {
+const Navbar = ({ registerButtonRef }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("");
 
@@ -14,6 +14,12 @@ const Navbar = () => {
   const handleLinkClick = (link) => {
     setActiveLink(link);
     setIsOpen(false);
+  };
+
+  const triggerHeroRegister = () => {
+    if (registerButtonRef && registerButtonRef.current) {
+      registerButtonRef.current.click();
+    }
   };
 
   return (
@@ -49,14 +55,12 @@ const Navbar = () => {
 
           {/* Register Button */}
           <div className="relative right-0 flex items-center">
-            <a
-              href="https://forms.google.com/your-form-url" // Replace with your actual Google Form URL
+            <button
+              onClick={triggerHeroRegister}
               className="bg-gradient-to-r text-white from-sky-500 to-sky-700 rounded-[54px] px-4 py-2 hover:bg-gradient-to-r hover:from-white hover:to-sky-400 hover:text-blue-600"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <div className="text-center text-xl font-normal">Register</div>
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -110,15 +114,15 @@ const Navbar = () => {
               </NavLink>
             )
           )}
-          <a
-            href="https://forms.google.com/your-form-url" // Replace with your actual Google Form URL
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={toggleMenu}
+          <button
+            onClick={() => {
+              triggerHeroRegister();
+              toggleMenu(); // Close the mobile menu after clicking
+            }}
             className="w-full bg-gradient-to-r from-sky-500 to-sky-700 text-white rounded-full px-6 py-3 text-center shadow-lg hover:from-white hover:to-sky-400 hover:text-blue-600 transition duration-300"
           >
             Register
-          </a>
+          </button>
         </div>
       </div>
     </nav>
