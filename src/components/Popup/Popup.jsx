@@ -24,7 +24,13 @@ const Popup = ({ isVisible, togglePopup, buttons, containerClassName }) => {
             <Button
               key={index}
               text={button.text}
-              url={button.url}
+              url={
+                button.text === "Light Weight"
+                  ? "https://forms.gle/cUhM5SLwKb5YRFiE7"
+                  : button.text === "Heavy Weight"
+                  ? "https://forms.gle/JV2SPtusfJJkTD3M9"
+                  : button.url
+              }
               className={`font-transrobotics text-white rounded-[54px] px-6 py-3 shadow-md transition-all duration-300 ${button.className}`}
             />
           ))}
