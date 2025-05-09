@@ -5,16 +5,19 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 // Import images
+import Person0 from "../../../public/People/TR.png"; // Updated path
 import Person1 from "../../../public/People/PM1.png"; // Updated path
 import Person2 from "../../../public/People/PM2.png";
+import Person3 from "../../../public/People/ER1.png"; // Updated path
+import Person4 from "../../../public/People/ER2.png"; // Updated path
 
 const teamMembers = [
   {
     role: "Senior Treasurer",
     name: "Dr Kasun Piyumal",
     phone: "", // Removed phone number
-    email: "Kasunp@kln.ac.lk",
-    photo: Person1,
+    email: "kasunp@kln.ac.lk",
+    photo: Person0,
   },
   {
     role: "Project Manager",
@@ -42,14 +45,14 @@ const teamMembers = [
     name: "D.R.R.C.Dasanayake",
     phone: "+94 70 494 9802",
     email: "dasanay-ec21074@stu.kln.ac.lk",
-    photo: Person1,
+    photo: Person3,
   },
   {
     role: "ER Coordinator",
     name: "A.P.V.P Rajarathne ",
     phone: "+94 71 076 9883",
-    email: "rajarat-ec21009@stu.kln.ac.lk ",
-    photo: Person1,
+    email: "rajarat-ec21009@stu.kln.ac.lk",
+    photo: Person4,
   },
 ];
 
@@ -64,7 +67,7 @@ const TeamCard = ({ member, index }) => (
       <img
         src={member.photo}
         alt={member.name}
-        className="absolute md:left-0 min-w-80 h-80 z-20 -translate-y-[45px] -translate-x-[-10px] md:-translate-x-[30px] md:-translate-y-[70px]" 
+        className="absolute md:left-0 min-w-80 h-80 z-20 -translate-y-[45px] -translate-x-[-10px] md:-translate-x-[30px] md:-translate-y-[70px]"
       />
     </div>
 
