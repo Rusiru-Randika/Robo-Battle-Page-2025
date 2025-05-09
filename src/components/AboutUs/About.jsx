@@ -34,31 +34,51 @@ export default function About() {
           What is UOK Robot Battle?
         </h1>
         <p className="font-poppins text-lg text-white mb-8">
-          <strong>UOK Robot Battles 2025</strong>, an intra-university open
-          event hosted by the University of Kelaniya’s Electronics and Computer
-          Science Club, aims to foster innovation and technological advancement
-          among students by providing a platform to showcase their creativity
-          and engineering skills in robotics. The event features two competition
-          categories:
+          Prepare for an electrifying experience as the Electronics and Computer
+          Science Club of the University of Kelaniya proudly presents the second
+          edition of <strong>UOK Robot Battles 2K25</strong>. Previously held as
+          an intra-university event with lightweight and heavyweight divisions,
+          this year’s competition expands its reach. It is now open to
+          university students, school students, and independent participants
+          through open categories. Building upon the success of its inaugural
+          event, this year's competition promises even more thrilling encounters
+          and innovative displays of engineering excellence.
         </p>
         <ul className="font-poppins text-lg text-white mb-8 list-disc list-inside">
           <li>
-            <strong>Heavy-Weight:</strong> Max 15 KG, 45 CM x 45 CM
+            <strong>Lightweight Division:</strong>
+            <ul className="list-disc list-inside ml-5">
+              <li>Eligibility: Open to all participants</li>
+              <li>
+                Specifications:
+                <ul className="list-disc list-inside ml-5">
+                  <li>Maximum Weight: 2.5 KG</li>
+                  <li>Maximum Dimensions: 25 CM × 25 CM</li>
+                </ul>
+              </li>
+            </ul>
           </li>
           <li>
-            <strong>Light-Weight:</strong> Max 2.5 KG, 25 CM x 25 CM
+            <strong>Heavyweight Division:</strong>
+            <ul className="list-disc list-inside ml-5">
+              <li>
+                Eligibility: Exclusively for university and school students
+              </li>
+              <li>
+                Specifications:
+                <ul className="list-disc list-inside ml-5">
+                  <li>Maximum Weight: 15 KG</li>
+                  <li>Maximum Dimensions: 45 CM × 45 CM</li>
+                </ul>
+              </li>
+            </ul>
           </li>
         </ul>
         <p className="font-poppins text-lg text-white mb-8">
-          It seeks to inspire excellence in technology, encouraging students to
-          experiment, collaborate, and explore the potential of robotics while
-          bringing together a community of passionate enthusiasts.
+          Showcase your creativity and sharpen your technical skills. Experience
+          the thrill of real-time robotic battles. Compete, collaborate, and
+          connect with a vibrant community of innovators.
         </p>
-        <div className="flex justify-center">
-          <button className="font-transrobotics text-2xl md:text-3xl px-8 py-4 bg-gradient-to-r from-[#6EE7B7] to-[#3B82F6] rounded-[54px] hover:from-[#3B82F6] hover:to-[#6EE7B7] transition-all duration-300">
-            <a href="/about">Read More</a>
-          </button>
-        </div>
       </div>
     </div>
   );

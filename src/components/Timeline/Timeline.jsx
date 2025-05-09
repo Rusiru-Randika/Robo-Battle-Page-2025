@@ -37,7 +37,7 @@ const events = [
     buttonColor: "bg-yellow-500 hover:bg-yellow-600 text-black",
     image: "/Timeline/Icon4.png",
   },
-  {
+  /*{
     date: "2025 September 05",
     title: "Robot Battle",
     description:
@@ -45,7 +45,7 @@ const events = [
     button: "View Details",
     buttonColor: "bg-purple-500 hover:bg-purple-600",
     image: "/Timeline/Icon5.png",
-  },
+  },*/
 ];
 
 export default function Timeline() {
@@ -74,7 +74,7 @@ export default function Timeline() {
       ref={timelineRef}
       className="pt-10 md:pt-20 pb-10 relative min-h-screen bg-[#020230]"
     >
-      <h1 className="font-transrobotics text-2xl md:text-4xl justify-center items-center px-5 md:px-10 flex text-center md:text-start text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 scroll-trigger">
+      <h1 className="font-transrobotics text-4xl md:text-4xl justify-center items-center px-5 md:px-10 flex text-center md:text-start text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 scroll-trigger">
         Timeline
       </h1>
 
