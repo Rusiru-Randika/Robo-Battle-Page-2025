@@ -45,7 +45,8 @@ const App = () => {
                 <section id="rules" className="pt-10">
                   <Rules />
                   <section className="" id="timeline">
-                    <Timeline />
+                    <Timeline registerButtonRef={registerButtonRef} />{" "}
+                    {/* Pass the ref */}
                   </section>
                 </section>
                 <section id="prizes" className="pt-10">

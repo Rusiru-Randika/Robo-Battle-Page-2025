@@ -118,7 +118,7 @@ const Rules = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Read More
+              Full Guidelines
             </a>
           </button>
         </div>

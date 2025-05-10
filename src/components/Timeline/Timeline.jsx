@@ -25,7 +25,7 @@ const events = [
     description:
       "Join the official pre-battle workshop. Get guidance, tips, and insights from pros to level up your game.",
     button: "Learn More",
-    buttonColor: "bg-green-500 hover:bg-green-600",
+    buttonColor: "bg-green-800 {/*hover:bg-green-600*/}",
     image: "/Timeline/Icon3.png",
   },
   {
@@ -34,21 +34,22 @@ const events = [
     description:
       "Everything you need to know, from rules to strategies. Join us and gear up with confidence.",
     button: "Join Session",
-    buttonColor: "bg-yellow-500 hover:bg-yellow-600 text-black",
+    buttonColor: "bg-yellow-800 {/*hover:bg-yellow-600*/} text-black",
     image: "/Timeline/Icon4.png",
   },
-  /*{
-    date: "2025 September 05",
-    title: "Robot Battle",
+  {
+    date: "Will Be Announced Soon",
+    title: "Battle Day",
     description:
       "The bots are built, the arena awaits. Greatness shows no mercy. Only one will reign supreme",
     button: "View Details",
-    buttonColor: "bg-purple-500 hover:bg-purple-600",
+    buttonColor: "bg-purple-800 {/*hover:bg-purple-600*/}",
     image: "/Timeline/Icon5.png",
-  },*/
+  },
 ];
 
-export default function Timeline() {
+export default function Timeline({ registerButtonRef }) {
+  // Accept registerButtonRef as a prop
   const timelineRef = useRef(null);
 
   useEffect(() => {
@@ -99,13 +100,19 @@ export default function Timeline() {
                 </div>
                 <TimelineNode src={event.image} />
                 <div className="w-1/3 md:w-2/5 flex justify-start scroll-trigger">
-                  <TimelineCard event={event} />
+                  <TimelineCard
+                    event={event}
+                    registerButtonRef={registerButtonRef}
+                  />
                 </div>
               </>
             ) : (
               <>
                 <div className="w-1/3 md:w-2/5 flex justify-end scroll-trigger">
-                  <TimelineCard event={event} />
+                  <TimelineCard
+                    event={event}
+                    registerButtonRef={registerButtonRef}
+                  />
                 </div>
                 <TimelineNode src={event.image} />
                 <div className="w-1/3 md:w-2/5 flex justify-start scroll-trigger">
@@ -161,7 +168,8 @@ function TimelineNode({ src }) {
   );
 }
 
-function TimelineCard({ event }) {
+function TimelineCard({ event, registerButtonRef }) {
+  // Accept registerButtonRef as a prop
   const [countdown, setCountdown] = useState("");
 
   useEffect(() => {
@@ -187,6 +195,12 @@ function TimelineCard({ event }) {
     }
   }, [event.title]);
 
+  const triggerHomeRegister = () => {
+    if (registerButtonRef && registerButtonRef.current) {
+      registerButtonRef.current.click(); // Trigger the home section's register button
+    }
+  };
+
   return (
     <div className="bg-gradient-to-b from-[#0D1B2A] to-[#1B263B] text-white rounded-lg p-3.5 md:p-6 max-w-md shadow-lg">
       <h2 className="text-sm md:text-xl font-bold mb-2 font-transrobotics text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
@@ -200,14 +214,59 @@ function TimelineCard({ event }) {
           Registration closing in : {countdown}
         </p>
       )}
-      <button
-        className={`${event.buttonColor} font-poppins font-bold text-white text-sm px-3 py-2 rounded transition`}
-        onClick={() =>
-          window.open("https://forms.google.com/your-form-url", "_blank")
-        } // Replace with your actual Google Form URL
-      >
-        {event.button}
-      </button>
+      <div className="flex flex-col md:flex-row md:items-center md:space-x-2">
+        {event.title === "Registration closing" ? (
+          <button
+            onClick={triggerHomeRegister} // Trigger the home section's register button
+            className="bg-red-500 hover:bg-red-600 text-white font-poppins font-bold text-sm px-3 py-2 rounded transition"
+          >
+            {event.button}
+          </button>
+        ) : event.title === "Registration opening" ? (
+          <button
+            onClick={triggerHomeRegister} // Trigger the home section's register button
+            className="bg-blue-500 hover:bg-blue-600 text-white font-poppins font-bold text-sm px-3 py-2 rounded transition"
+          >
+            {event.button}
+          </button>
+        ) : (
+          <button
+            className={`${
+              event.buttonColor
+            } font-poppins font-bold text-gray-400 text-sm px-3 py-2 rounded ${
+              event.title === "Workshop" ||
+              event.title === "Awareness Session" ||
+              event.title === "Battle Day"
+                ? "hover:bg-none cursor-not-allowed"
+                : "transition"
+            }`}
+            onClick={() =>
+              event.title === "Workshop" ||
+              event.title === "Awareness Session" ||
+              event.title === "Battle Day"
+                ? null
+                : window.open(
+                    "https://forms.google.com/your-form-url",
+                    "_blank"
+                  )
+            } // Replace with your actual Google Form URL
+            disabled={
+              event.title === "Workshop" ||
+              event.title === "Awareness Session" ||
+              event.title === "Battle Day"
+            }
+          >
+            {event.button}
+          </button>
+        )}
+        {(event.title === "Workshop" ||
+          event.title === "Awareness Session" ||
+          event.title === "Battle Day") && (
+          <p className="text-xs md:text-base font-poppins text-red-400 mt-2 md:mt-0">
+            Available Soon
+          </p>
+        )}
+      </div>
     </div>
   );
 }

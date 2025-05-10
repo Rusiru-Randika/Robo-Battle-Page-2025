@@ -48,7 +48,7 @@ export default function About() {
           <li>
             <strong>Lightweight Division:</strong>
             <ul className="list-disc list-inside ml-5">
-              <li>Eligibility: Open to all participants</li>
+              <li>Eligibility: Open to anyone</li>
               <li>
                 Specifications:
                 <ul className="list-disc list-inside ml-5">
