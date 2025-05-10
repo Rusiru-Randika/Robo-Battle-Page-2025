@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import logo from "../../../public/Branding/logo.svg"; // Adjust path as needed
 
 const Navbar = ({ registerButtonRef }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("");
+  const [activeLink, setActiveLink] = useState("/#home");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -14,7 +14,98 @@ const Navbar = ({ registerButtonRef }) => {
   const handleLinkClick = (link) => {
     setActiveLink(link);
     setIsOpen(false);
+
+    // Disable scroll detection temporarily to prevent it from overriding the clicked link
+    if (window.scrollDetectionTimeout) {
+      clearTimeout(window.scrollDetectionTimeout);
+    }
+
+    window.scrollDetectionEnabled = false;
+    window.scrollDetectionTimeout = setTimeout(() => {
+      window.scrollDetectionEnabled = true;
+    }, 1000); // Re-enable scroll detection after 1 second
   };
+
+  // Initialize scroll detection enabled state
+  useEffect(() => {
+    window.scrollDetectionEnabled = true;
+  }, []);
+
+  // Set up scroll event to detect which section is currently in view
+  useEffect(() => {
+    const sections = [
+      "home",
+      "about",
+      "rules",
+      "timeline",
+      "prizes",
+      "contact",
+    ];
+
+    // Function to determine which section is in view
+    const handleScroll = () => {
+      // Skip if scroll detection is disabled (right after a link click)
+      if (window.scrollDetectionEnabled === false) {
+        return;
+      }
+      // Get all section elements
+      const sectionElements = sections
+        .map((section) => ({
+          id: section,
+          element: document.getElementById(section),
+        }))
+        .filter((item) => item.element !== null);
+
+      // Find which section is currently in view
+      let currentSection = null;
+      let maxVisibility = 0;
+
+      sectionElements.forEach(({ id, element }) => {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Calculate how much of the section is visible in the viewport
+        const visibleHeight =
+          Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+        const sectionVisibility =
+          visibleHeight > 0 ? visibleHeight / element.offsetHeight : 0;
+
+        // Special handling for timeline section which is nested inside rules
+        if (id === "timeline" && sectionVisibility > 0.3) {
+          currentSection = id;
+          maxVisibility = sectionVisibility;
+        }
+        // For other sections, use normal visibility calculation
+        else if (sectionVisibility > maxVisibility && id !== "timeline") {
+          currentSection = id;
+          maxVisibility = sectionVisibility;
+        }
+      });
+
+      if (currentSection) {
+        setActiveLink(`/#${currentSection}`);
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Call once on mount to set initial active section
+    handleScroll();
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Set active link based on URL hash on initial load
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setActiveLink(`/${hash}`);
+    }
+  }, []);
 
   const triggerHeroRegister = () => {
     if (registerButtonRef && registerButtonRef.current) {
@@ -91,7 +182,7 @@ const Navbar = ({ registerButtonRef }) => {
           <img
             src={logo}
             alt="Logo"
-            className="w-10 h-10 cursor-pointer"
+            className="w-12 h-12 cursor-pointer"
             onClick={() => {
               toggleMenu();
               window.location.href = "/#home"; // Navigate to home
@@ -137,7 +228,7 @@ const NavLink = ({ to, children, activeLink, onClick }) => {
     if (to.startsWith("/#")) {
       e.preventDefault();
       const sectionId = to.replace("/#", "");
-      navigate("/");
+      navigate("/"); // Ensure navigation to the home page
       setTimeout(() => {
         const section = document.getElementById(sectionId);
         if (section) {
@@ -154,8 +245,10 @@ const NavLink = ({ to, children, activeLink, onClick }) => {
     <Link
       to={to}
       onClick={handleClick}
-      className={`w-full px-4 py-2 text-xl font-medium text-white rounded-full transition duration-200 hover:text-[#23C4FF] ${
-        activeLink === to ? "text-[#23C4FF]" : ""
+      className={`w-full px-4 py-2 text-xl font-medium rounded-full transition duration-200 ${
+        activeLink === to
+          ? "text-[#23C4FF] bg-[#ffffff33]" // Highlight active link
+          : "text-white hover:text-[#23C4FF]"
       }`}
     >
       {children}
