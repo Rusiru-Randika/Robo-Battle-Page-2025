@@ -93,7 +93,7 @@ function LargeCard({ children, className }) {
   const [title, ...rest] = React.Children.toArray(children);
   return (
     <div
-      className={`grid gap-5 mt-4 justify-center items-center content-center rounded-md md:pt-2 pt-3 w-full max-w-md bg-gradient-to-b from-[#0A0F29] to-[#0A0F29] ${className}`}
+      className={`grid gap-5 mt-4 justify-center items-center content-center rounded-md md:pt-2 pt-3 w-full max-w-md bg-gradient-to-b from-[#0A0F29] to-[#0A0F29] ${className} hover:scale-105 transition-transform duration-300`}
     >
       <h1 className="text-transparent bg-clip-text bg-gradient-to-b from-[#009DFF] to-[#B7E3FF] text-2xl md:text-3xl text-center">
         {title}
@@ -105,7 +105,7 @@ function LargeCard({ children, className }) {
 
 function SmallCard({ children, reward, className }) {
   return (
-    <div className={className}>
+    <div className={`${className}`}>
       <div className="gap-5 justify-center items-center content-center rounded-md md:py-2 py-3 px-2 flex flex-col text-center w-full h-full bg-gradient-to-b from-[#0A0F29] to-[#0A0F29]">
         <h1 className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999] text-lg md:text-xl">
           {children}
@@ -120,7 +120,7 @@ function SmallCard({ children, reward, className }) {
 
 function MediumCard({ children, reward, className }) {
   return (
-    <div className={className}>
+    <div className={`${className}`}>
       <div className="gap-5 justify-center items-center content-center rounded-md md:py-2 p-3 flex flex-col text-center w-full h-auto bg-gradient-to-b from-[#0A0F29] to-[#0A0F29]">
         <img src={gaintnut} alt="nut" />
         <h1 className="text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999] text-lg md:text-xl">
