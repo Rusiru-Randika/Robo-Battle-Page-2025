@@ -47,7 +47,9 @@ const Home = ({ registerButtonRef }) => {
             <div className="flex flex-col md:flex-row gap-5 mt-5 items-center">
               <Button
                 text={"Public Calender"}
-                url={"/src/assets/UOK_Robot_Battles_2K25.ics"}
+                url={
+                  "https://drive.google.com/uc?export=download&id=19BZca2CkDRZSFHJw5XRyOyYQHoa42p4C"
+                }
                 className="font-transrobotics text-grey-100 bg-gradient-to-r from-white to-sky-100 hover:text-blue-600 rounded-[54px] px-6 py-3 hover:bg-gradient-to-r hover:from-white hover:text-blue-600 hover:to-sky-400 border-none"
               />
               <button
