@@ -44,7 +44,7 @@ export default function About() {
           event, this year's competition promises even more thrilling encounters
           and innovative displays of engineering excellence.
         </p>
-        <ul className="font-poppins text-lg text-white mb-8 list-disc list-inside">
+        <ul className="font-poppins text-lg text-white mb-8 list-disc list-inside hidden sm:block">
           <li>
             <strong>Lightweight Division:</strong>
             <ul className="list-disc list-inside ml-5">
@@ -74,7 +74,7 @@ export default function About() {
             </ul>
           </li>
         </ul>
-        <p className="font-poppins text-lg text-white mb-8">
+        <p className="font-poppins text-lg text-white mb-8 hidden sm:block">
           Showcase your creativity and sharpen your technical skills. Experience
           the thrill of real-time robotic battles. Compete, collaborate, and
           connect with a vibrant community of innovators.
