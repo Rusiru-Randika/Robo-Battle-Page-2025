@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import Button from "../Button/Button";
 import Popup from "../Popup/Popup";
-import homeLogo from "/public/Branding/Home-Logo.svg";
+import homeLogo from "/public/Branding/Home-Logo.png";
 
 const Home = ({ registerButtonRef }) => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
