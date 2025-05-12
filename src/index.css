@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/sf-transrobotics-2');
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -5,13 +6,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face {
-  font-family: 'SF TransRobotics Condensed';
-  src: url('/public/Fonts/SFTransRoboticsCondensed.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 @keyframes fade-in {
   from {
@@ -83,7 +77,7 @@
 }
 
 body {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "SF TransRobotics Condensed", sans-serif;
   background: linear-gradient(to bottom, #11155E, #000004);
   background-size: cover;
   background-repeat: none;
@@ -121,4 +115,8 @@ p {
   .footer-distributed {
     min-height: 30vh;
   }
+}
+
+html {
+  color-scheme: only light;
 }

@@ -36,7 +36,7 @@ const Home = ({ registerButtonRef }) => {
             ROBOT <br /> BATTLES
           </h1>
           <h2 className="font-transrobotics scroll-animate text-xl md:text-3xl opacity-90">
-            2025
+            2k25
           </h2>
           <div className="flex flex-col items-center font-bebasneue mt-5 animate-fade-in">
             <p className="text-white text-lg md:text-xl leading-normal opacity-80 max-w-2xl">

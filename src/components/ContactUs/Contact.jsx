@@ -23,7 +23,7 @@ const teamMembers = [
   {
     role: "Project Manager",
     name: "Supun Tharaka",
-    phone: "+94 77 109 2426",
+    phone: "+94 76 131 2170",
     email: "tharaka-ec21028@stu.kln.ac.lk",
     photo: Person1,
   },

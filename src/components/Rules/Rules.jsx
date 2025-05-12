@@ -32,7 +32,7 @@ const Rules = () => {
         </h1>
         <div className="font-poppins text-base md:text-lg leading-tight text-white space-y-4 scroll-trigger">
           <h2 className="text-2xl font-bold">Team Requirements</h2>
-          <ul className="list-disc list-inside ">
+          <ul className="list-disc list-outside ">
             <li>Each participant can only join one team.</li>
             <li>A team must consist of a maximum of 5 members.</li>
             <li>Must have a unique name and a team leader.</li>
@@ -40,7 +40,7 @@ const Rules = () => {
           </ul>
 
           <h3 className="text-xl font-semibold pt-2">Heavy Weight</h3>
-          <ul className="list-disc list-inside ">
+          <ul className="list-disc list-outside ">
             <li>
               Team members must be affiliated with the same university or
               school.
@@ -48,7 +48,7 @@ const Rules = () => {
           </ul>
 
           <h3 className="text-xl font-semibold pt-2">Light Weight</h3>
-          <ul className="list-disc list-inside ">
+          <ul className="list-disc list-outside ">
             <li>Team members must be Sri Lankan nationals.</li>
           </ul>
 
@@ -56,7 +56,7 @@ const Rules = () => {
           <h3 className="text-xl font-semibold pt-2 md:block hidden">
             General
           </h3>
-          <ul className="list-disc list-inside md:block hidden">
+          <ul className="list-disc list-outside md:block hidden">
             <li>Chassis must be custom-made.</li>
             <li>Power supply must be internal.</li>
             <li>
@@ -89,21 +89,21 @@ const Rules = () => {
           </ul>
 
           <h3 className="text-xl font-semibold pt-2">Heavy Weight</h3>
-          <ul className="list-disc list-inside ">
+          <ul className="list-disc list-outside ">
             <li>Weight must not exceed 15kg.</li>
             <li>Dimensions within 45 cm × 45 cm (L x W).</li>
             <li>Can expand to 60cm after battle starts.</li>
           </ul>
 
           <h3 className="text-xl font-semibold pt-2">Light Weight</h3>
-          <ul className="list-disc list-inside ">
+          <ul className="list-disc list-outside ">
             <li>Weight must not exceed 2.5kg.</li>
             <li>Dimensions within 25 cm × 25 cm (L x W).</li>
             <li>Can expand to 35cm after battle starts.</li>
           </ul>
 
           <h2 className="text-2xl font-bold pt-4">Safety Requirements</h2>
-          <ul className="list-disc list-inside ">
+          <ul className="list-disc list-outside ">
             <li>Entrants must pass safety and technical inspections.</li>
             <li>No fluid or gas leaks allowed.</li>
             <li>Operators must avoid entering the combat zone.</li>

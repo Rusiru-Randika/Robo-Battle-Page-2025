@@ -38,20 +38,20 @@ export default function About() {
           Science Club of the University of Kelaniya proudly presents the second
           edition of <strong>UOK Robot Battles 2K25</strong>. Previously held as
           an intra-university event with lightweight and heavyweight divisions,
-          this year’s competition expands its reach. It is now open to
+          this year's competition expands its reach. It is now open to
           university students, school students, and independent participants
           through open categories. Building upon the success of its inaugural
           event, this year's competition promises even more thrilling encounters
           and innovative displays of engineering excellence.
         </p>
-        <ul className="font-poppins text-lg text-white mb-8 list-disc list-inside hidden sm:block">
+        <ul className="font-poppins text-lg text-white mb-8 list-disc list-outside hidden sm:block">
           <li>
             <strong>Lightweight Division:</strong>
-            <ul className="list-disc list-inside ml-5">
+            <ul className="list-disc list-outside ml-5">
               <li>Eligibility: Open to anyone</li>
               <li>
                 Specifications:
-                <ul className="list-disc list-inside ml-5">
+                <ul className="list-disc list-outside ml-5">
                   <li>Maximum Weight: 2.5 KG</li>
                   <li>Maximum Dimensions: 25 CM × 25 CM</li>
                 </ul>
@@ -60,13 +60,13 @@ export default function About() {
           </li>
           <li>
             <strong>Heavyweight Division:</strong>
-            <ul className="list-disc list-inside ml-5">
+            <ul className="list-disc list-outside ml-5">
               <li>
                 Eligibility: Exclusively for university and school students
               </li>
               <li>
                 Specifications:
-                <ul className="list-disc list-inside ml-5">
+                <ul className="list-disc list-outside ml-5">
                   <li>Maximum Weight: 15 KG</li>
                   <li>Maximum Dimensions: 45 CM × 45 CM</li>
                 </ul>
