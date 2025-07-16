@@ -14,7 +14,7 @@ const events = [
     date: "2025 August 05",
     title: "Registration closing",
     description:
-      "Don’t miss your chance to be part of the fiercest battle of the year. Finalize your team and register before it’s too late.",
+      "Don't miss your chance to be part of the fiercest battle of the year. Finalize your team and register before it's too late.",
     button: "Register Now Before Closing",
     buttonColor: "bg-red-500 hover:bg-red-600",
     image: "/Timeline/Icon2.png",
@@ -38,7 +38,7 @@ const events = [
     image: "/Timeline/Icon4.png",
   },
   {
-    date: "Will Be Announced Soon",
+    date: "2025 September 20",
     title: "Battle Day",
     description:
       "The bots are built, the arena awaits. Greatness shows no mercy. Only one will reign supreme",

@@ -43,14 +43,14 @@ const teamMembers = [
   },
   {
     role: "ER Coordinator",
-    name: "D.R.R.C.Dasanayake",
+    name: "Chamoda Dasanayake",
     phone: "+94 70 494 9802",
     email: "dasanay-ec21074@stu.kln.ac.lk",
     photo: Person4,
   },
   {
     role: "ER Coordinator",
-    name: "A.P.V.P Rajarathne ",
+    name: "Vishwa Rajarathne ",
     phone: "+94 71 076 9883",
     email: "rajarat-ec21009@stu.kln.ac.lk",
     photo: Person5,
@@ -146,7 +146,7 @@ const Team = () => {
   return (
     <div
       ref={containerRef}
-      className="md:mb-12 md:mt-[50px] py-5 px-4 md:px-10 flex flex-col items-center justify-center"
+      className="md:mb-12 pb-5 px-4 md:px-10 flex flex-col items-center justify-center"
     >
       <h1 className="py-10 font-transrobotics text-3xl md:text-4xl content-center px-10 flex md:text-start text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] to-[#999999] scroll-trigger">
         CONTACT US

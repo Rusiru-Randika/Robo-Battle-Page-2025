@@ -52,8 +52,8 @@ const App = () => {
                 <section id="prizes" className="pt-10">
                   <WinningPrizes />
                 </section>
-                {/* <Sponsors /> */}
-                <section id="contact" className="pt-10">
+                <Sponsors />
+                <section id="contact">
                   <Team />
                 </section>
                 <Footer />
